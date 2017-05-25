@@ -9,7 +9,7 @@
   </div>
 </template>
 <script>
-import Swiper from '../../src/components/swiper/index.vue'
+import Swiper from '@/components/swiper/index'
 export default{
   data () {
     return {

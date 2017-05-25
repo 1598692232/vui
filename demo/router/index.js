@@ -1,12 +1,12 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Hello from '../components/Hello.vue'
-import Swiper from '../components/Swiper.vue'
-import Diabox from '../components/Dialog.vue'
+import Hello from '../components/Hello'
+import Swiper from '../components/Swiper'
+import Diabox from '../components/Dialog'
 // import Overlay from '@/demo/Overlay'
-import Action from '../components/Actions.vue'
-import IosSelect from '../components/IosSelect.vue'
-import Datepicker from '../components/Datepicker.vue'
+import Action from '../components/Actions'
+import IosSelect from '../components/IosSelect'
+import Datepicker from '../components/Datepicker'
 import VueScroller from 'vue-scroller'
 
 Vue.use(VueScroller)

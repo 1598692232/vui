@@ -1,6 +1,10 @@
 var path = require('path')
 var webpack = require('webpack')
 
+function resolve (dir) {
+  return path.join(__dirname, '/', dir)
+}
+
 module.exports = {
   entry: './demo/main.js',
   output: {
@@ -10,6 +14,15 @@ module.exports = {
   },
   module: {
     rules: [
+      {
+        test: /\.(js|vue)$/,
+        loader: 'eslint-loader',
+        enforce: 'pre',
+        include: [resolve('src'), resolve('demo')],
+        options: {
+          formatter: require('eslint-friendly-formatter')
+        }
+      },
       {
         test: /\.vue$/,
         loader: 'vue-loader',
@@ -34,8 +47,10 @@ module.exports = {
     ]
   },
   resolve: {
+    extensions: ['.js', '.vue', '.json'],
     alias: {
-      'vue$': 'vue/dist/vue.esm.js'
+      'vue$': 'vue/dist/vue.esm.js',
+      '@': resolve('src')
     }
   },
   devServer: {

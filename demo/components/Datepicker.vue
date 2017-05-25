@@ -7,7 +7,7 @@
 
 </style>
 <script>
-import datepicker from '../../src/components/datepicker/index.vue'
+import datepicker from '@/components/datepicker/index.vue'
 
 export default {
   components: {

@@ -5,7 +5,7 @@
   </div>
 </template>
 <script>
-  import actions from '../../src/components/actions/index.vue'
+  import actions from '@/components/actions/index.vue'
   export default{
     data () {
       return {

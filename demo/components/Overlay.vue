@@ -6,7 +6,7 @@
   </div>
 </template>
 <script>
-  import overlay from '../../src/components/overlay/index.vue'
+  import overlay from '@/components/overlay/index.vue'
   export default{
     data () {
       return {

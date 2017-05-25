@@ -11,7 +11,7 @@
   </div>
 </template>
 <script>
-  import iosSelect from '../../src/components/iosSelect/index.vue'
+  import iosSelect from '@/components/iosSelect/index.vue'
   export default{
     data () {
       return {
