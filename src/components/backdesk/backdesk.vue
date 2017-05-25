@@ -1,0 +1,51 @@
+<template>
+  <div vui-backdesk>
+      <div class="vui2-back"></div>
+  </div>
+</template>
+<style>
+  .vui2-back{
+    position: fixed;
+    width:100%;
+    height:100%;
+    left:0;
+    top:0;
+    background: rgba(0,0,0,0.5);
+  }
+</style>
+<script>
+  import Util from '../../util/util'
+
+  const duration = 200
+
+  export default{
+    data() {
+      return {
+        state: 0
+      }
+    },
+
+    destroyed() {
+      Util.removeElement('[vui-backdesk]')
+    },
+
+    methods: {
+      show (allowTouchMove) {
+        !allowTouchMove && document.body.addEventListener('touchmove', (e) => {
+          e.preventDefault()
+        })
+
+        this.state = 1
+      },
+
+      hide (allowTouchMove) {
+        allowTouchMove && document.body.removeEventListener('touchmove', (e) => {
+          e.preventDefault()
+        })
+
+        this.state = 0
+        return Util.timeout(duration)
+      }
+    }
+  }
+</script>
