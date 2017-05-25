@@ -1,10 +1,10 @@
 <template>
   <div vui-backdesk>
-      <div class="vui2-back"></div>
+      <div class="vui-back"></div>
   </div>
 </template>
 <style>
-  .vui2-back{
+  .vui-back{
     position: fixed;
     width:100%;
     height:100%;

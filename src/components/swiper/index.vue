@@ -1,5 +1,5 @@
 <template>
-  <div class="swiper" :id="id"
+  <div class="vui-swiper" :id="id"
   @touchstart="onTouchStart"
   @touchmove="onTouchMove"
   @touchend="onTouchEnd"
@@ -12,21 +12,21 @@
   </div>
 </template>
 <style scoped>
-  ul li{
+  .vui-swiper ul li{
     list-style: none;
   }
-  .swiper {
+  .vui-swiper {
     width: 100%;
     min-height: 200px;
     overflow: hidden;
     position: relative;
   }
-  .swiper ul{
+  .vui-swiper ul{
     position:absolute;
     height:100%;
     width:100%;
   }
-  .swiper ul li{
+  .vui-swiper ul li{
     position: absolute;
     top:0;
     width:100%;

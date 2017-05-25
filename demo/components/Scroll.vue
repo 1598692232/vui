@@ -17,15 +17,15 @@
   import scroll from '@/components/scroll/index.vue'
   export default {
     //        name: 'app',
-    data(){
+    data() {
       return {
         msg: 'Welcome to Your Vue.js App',
         list: []
       }
     },
-    created(){
+    created() {
       for (let i = 0; i < 60; i++) {
-        this.list.push(i);
+        this.list.push(i)
       }
     },
 
@@ -33,19 +33,17 @@
       scroll
     },
     methods: {
-      refresh(done){
-        setTimeout(()=> {
-          console.log("refresh");
+      refresh(done) {
+        setTimeout(() => {
+          console.log('refresh')
           done()
         }, 1000)
-
       },
-      loadData(done){
-        console.log("loadData");
-        setTimeout(()=> {
+      loadData(done) {
+        console.log('loadData')
+        setTimeout(() => {
           done()
         }, 1000)
-
       }
     }
   }

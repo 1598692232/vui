@@ -1,31 +1,31 @@
 <template>
-  <div class="vmui-ranger">
+  <div class="vui-ranger">
     <slot name="label-min">
-        <span class="vmui-ranger-lmin">{{range[0]}}</span>
+        <span class="vui-ranger-lmin">{{range[0]}}</span>
     </slot>
     <slot name="label-max">
-      <span class="vmui-ranger-lmax">{{range[1]}}</span>
+      <span class="vui-ranger-lmax">{{range[1]}}</span>
     </slot>
     <div v-if="valShow">
       <slot name="label-value">
-        <div class="vmui-ranger-value" v-if="sliderNum==1">
+        <div class="vui-ranger-value" v-if="sliderNum==1">
           {{value[1]}}
         </div>
-        <div class="vmui-ranger-value" v-else>
+        <div class="vui-ranger-value" v-else>
           {{value[0]}} - {{value[1]}}
         </div>
       </slot>
     </div>
-    <div class="vmui-ranger-content">
-      <div class="vmui-ranger-body" ref="ranger_body">
-        <div class="vmui-ranger-cover1" :class="{'vmui-setting':setting}" ref="cover1"  v-if="sliderNum==2"></div>
-        <div class="vmui-ranger-connect-line"></div>
-        <div class="vmui-ranger-cover2" :class="{'vmui-setting':setting}" ref="cover2" ></div>
-        <div class='vmui-drag1' ref="drag1" v-draggable="{axis: 'x'}"
-             @draging="onDraging" @drag:end="onDragEnd" :class="{'vmui-setting':setting}"
+    <div class="vui-ranger-content">
+      <div class="vui-ranger-body" ref="ranger_body">
+        <div class="vui-ranger-cover1" :class="{'vui-setting':setting}" ref="cover1"  v-if="sliderNum==2"></div>
+        <div class="vui-ranger-connect-line"></div>
+        <div class="vui-ranger-cover2" :class="{'vui-setting':setting}" ref="cover2" ></div>
+        <div class='vui-drag1' ref="drag1" v-draggable="{axis: 'x'}"
+             @draging="onDraging" @drag:end="onDragEnd" :class="{'vui-setting':setting}"
              v-if="sliderNum==2"></div>
-        <div class='vmui-drag2' ref="drag2" v-draggable="{axis: 'x'}"
-             @draging="onDraging" @drag:end="onDragEnd" :class="{'vmui-setting':setting}"
+        <div class='vui-drag2' ref="drag2" v-draggable="{axis: 'x'}"
+             @draging="onDraging" @drag:end="onDragEnd" :class="{'vui-setting':setting}"
         ></div>
       </div>
     </div>
@@ -33,11 +33,11 @@
   </div>
 </template>
 <style>
-  .vmui-ranger {
+  .vui-ranger {
     position: relative;
   }
 
-  .vmui-ranger .vmui-ranger-value {
+  .vui-ranger .vui-ranger-value {
     position: absolute;
     width: 200px;
     left: 50%;
@@ -46,7 +46,7 @@
     text-align: center;
   }
 
-  .vmui-ranger .vmui-ranger-content {
+  .vui-ranger .vui-ranger-content {
     width: 100%;
     height: 28px;
     box-sizing: border-box;
@@ -54,26 +54,26 @@
     position: relative;
   }
 
-  .vmui-ranger .vmui-ranger-lmin {
+  .vui-ranger .vui-ranger-lmin {
     display: inline-block;
     position: absolute;
     left: 0;
     top: -15px
   }
 
-  .vmui-ranger .vmui-ranger-lmax {
+  .vui-ranger .vui-ranger-lmax {
     display: inline-block;
     position: absolute;
     right: 0;
     top: -15px
   }
 
-  .vmui-ranger .vmui-ranger-content > .vmui-ranger-body {
+  .vui-ranger .vui-ranger-content > .vui-ranger-body {
     width: 100%;
     position: relative;
   }
 
-  .vmui-ranger .vmui-ranger-connect-line {
+  .vui-ranger .vui-ranger-connect-line {
     position: absolute;
     top: 12px;
     left: 0;
@@ -83,7 +83,7 @@
     border-radius: 2px;
   }
 
-  .vmui-ranger .vmui-ranger-cover2 {
+  .vui-ranger .vui-ranger-cover2 {
     position: absolute;
     right: 0;
     top: 12px;
@@ -92,7 +92,7 @@
     background: #e1e1e1;
   }
 
-  .vmui-ranger .vmui-ranger-cover1 {
+  .vui-ranger .vui-ranger-cover1 {
     position: absolute;
     left: 0;
     top: 12px;
@@ -100,13 +100,13 @@
     z-index: 1;
     background: #e1e1e1;
   }
-  .vmui-ranger .vmui-drag1{
+  .vui-ranger .vui-drag1{
     left: -12px;
   }
-  .vmui-ranger .vmui-drag2{
+  .vui-ranger .vui-drag2{
     right: -13px;
   }
-  .vmui-ranger .vmui-drag1, .vmui-ranger .vmui-drag2 {
+  .vui-ranger .vui-drag1, .vui-ranger .vui-drag2 {
     position: absolute;
     top: 0;
     width: 24px;
@@ -117,7 +117,7 @@
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
     z-index: 1
   }
-  .vmui-ranger .vmui-setting{
+  .vui-ranger .vui-setting{
     transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1) 0ms
   }
 </style>
@@ -219,7 +219,7 @@ export default {
 
       /*拖动进行时*/
       onDraging (e) {
-        e.target.className === 'vmui-drag1' ? this._setDrag1AndCover1(e) : this._setDrag2AndCover2(e)
+        e.target.className === 'vui-drag1' ? this._setDrag1AndCover1(e) : this._setDrag2AndCover2(e)
         this._setVal(e)
       },
       _setDrag1AndCover1 (e) {
@@ -253,7 +253,7 @@ export default {
         }
       },
       _setVal (e) {
-        e.target.className === 'vmui-drag2'
+        e.target.className === 'vui-drag2'
         ? this.value[1] = this.rangerNumber * ((this.clientMaxWidth - this.$refs.cover2.offsetWidth) / this.clientMaxWidth) + this.range[0]
           : this.value[0] = this.$refs.cover1.offsetWidth / this.clientMaxWidth * this.rangerNumber + this.range[0]
         this.$emit('updating', this.sliderNum === 1 ? this.value[1] : this.value, e)
@@ -261,15 +261,15 @@ export default {
       },
       /*  拖动结束 */
       onDragEnd (e) {
-        e.target.className === 'vmui-drag1' ?  this.drag1$.transX = e.data.x : this.drag2$.transX = e.data.x
+        e.target.className === 'vui-drag1' ?  this.drag1$.transX = e.data.x : this.drag2$.transX = e.data.x
         _.css(this.$refs.drag2, 'z-index', '1')
         if (this.sliderNum === 2) {
           _.css(this.$refs.drag1, 'z-index', '1')
         }
-        if (e.target.className === 'vmui-drag1' && e.data.x >= this.clientMaxWidth) {
+        if (e.target.className === 'vui-drag1' && e.data.x >= this.clientMaxWidth) {
           _.css(this.$refs.drag1, 'z-index', '10')
         }
-        if (e.target.className === 'vmui-drag2' && e.data.x <= -this.clientMaxWidth && this.sliderNum === 2) {
+        if (e.target.className === 'vui-drag2' && e.data.x <= -this.clientMaxWidth && this.sliderNum === 2) {
           _.css(this.$refs.drag2, 'z-index', '10')
         }
       },

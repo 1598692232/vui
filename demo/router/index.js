@@ -6,6 +6,7 @@ import Diabox from '../components/Dialog'
 import Action from '../components/Actions'
 import IosSelect from '../components/IosSelect'
 import Datepicker from '../components/Datepicker'
+import Scroll from '../components/Scroll'
 import Ranger from '../components/ranger'
 import VueScroller from 'vue-scroller'
 
@@ -43,6 +44,11 @@ export default new Router({
       path: '/ranger',
       name: 'Ranger',
       component: Ranger
+    },
+    {
+      path: '/scroll',
+      name: 'Scroll',
+      component: Scroll
     }
   ]
 })
