@@ -8,7 +8,7 @@
 
 </style>
 <script>
-  import iosSelect from '../iosSelect/index'
+  import iosSelect from '../iosselect/index'
 
   const [CURRENT_YEAR, BIG_MONTH, SMALL_MONTH] = [new Date().getFullYear(), [1, 3, 5, 7, 8, 10, 12], [4, 6, 9, 11]]
 

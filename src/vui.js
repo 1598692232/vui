@@ -9,7 +9,7 @@ import Backdesk from './components/backdesk'
 import Actions from './components/actions'
 import Datepicker from './components/datepicker'
 import Diabox from './components/Diabox'
-import IosSelect from './components/iosslect'
+import IosSelect from './components/iosselect'
 import Ranger from './components/ranger'
 import Scroll from './components/scroll'
 
@@ -25,12 +25,12 @@ Vue.component('Ranger', Ranger)
 Vue.component('Scroll', Scroll)
 
 export default {
-    Swiper,
-    Backdesk,
-    Actions,
-    Datepicker,
-    Diabox,
-    IosSelect,
-    Ranger,
-    Scroll
+  Swiper,
+  Backdesk,
+  Actions,
+  Datepicker,
+  Diabox,
+  IosSelect,
+  Ranger,
+  Scroll
 }

@@ -34,8 +34,8 @@
     background-color: #0a9dc7;
     z-index:-1;
   }
-
 </style>
+
 <script>
   export default{
 
@@ -75,13 +75,6 @@
         transition: false,
         clearTime: false
       }
-    },
-
-    updated () {
-//      console.log(this.newData)
-    },
-
-    computed: {
     },
 
     mounted () {
