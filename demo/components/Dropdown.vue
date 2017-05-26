@@ -1,13 +1,13 @@
 <template>
     <div>
         <div style="height:50px;"></div>
-        <button v-dropdown="{dropList:[1,2,3,4],dataFormatter:dataFormatter,dropClick:dropClick,render:render}" style="display: inline-block;float: left;margin:0 20px;">adasd</button>
+        <button v-dropdown="{dropList:list1,dataFormatter:dataFormatter,dropClick:dropClick,render:render}" style="display: inline-block;float: left;margin:0 20px;">adasd</button>
         <div style="height:550px;"></div>
-        <button v-dropdown="{dropList:[1,2,3,4],dataFormatter:dataFormatter,dropClick:dropClick,render:render}" style="display: inline-block;float: right;margin:0 20px;">adasd</button>
+        <button v-dropdown="{dropList:list2,dataFormatter:dataFormatter,dropClick:dropClick,render:render}" style="display: inline-block;float: right;margin:0 20px;">adasd</button>
         <div style="height:200px;"></div>
-        <button v-dropdown="{dropList:[1,2,3,4],dataFormatter:dataFormatter,dropClick:dropClick,render:render}" style="display: inline-block;float: left;margin:0 20px;">adasd</button>
+        <button v-dropdown="{dropList:list3,dataFormatter:dataFormatter,dropClick:dropClick,render:render}" style="display: inline-block;float: left;margin:0 20px;">adasd</button>
         <div style="height:50px;"></div>
-        <button v-dropdown="{dropList:[1,2,3,4],dataFormatter:dataFormatter,dropClick:dropClick,render:render}" style="display: inline-block;float: left;margin:0 20px;">adasd</button>
+        <button v-dropdown="{dropList:list4,dataFormatter:dataFormatter,dropClick:dropClick,render:render}" style="display: inline-block;float: left;margin:0 20px;">adasd</button>
     </div>
 </template>
 <style>
@@ -18,7 +18,10 @@
     export default {
       data() {
         return {
-          list: [1, 2, 3, 4]
+          list1: [1, 2, 3, 4],
+          list2: [2, 2, 3, 4],
+          list3: [3, 2, 3, 4],
+          list4: [4, 2, 3, 4]
         }
       },
 

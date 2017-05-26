@@ -29,7 +29,7 @@ export default class Util {
   }
 
   createVm(parent = 'div', vm, more = false) {
-    if (!document.querySelector('[' + parent + ']') || more) {
+    if (!this._el) {
       this.createElement(parent)
     }
 
