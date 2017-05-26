@@ -2,12 +2,16 @@
  * Created by EX-pengzhiliang001 on 2017-05-19.
  */
 import Vue from 'vue'
-class Util {
+export default class Util {
+  constructor() {
+    this._el = null
+  }
+
   createElement(attr, tag) {
     let el = document.createElement(tag || 'div')
-    console.log(el)
     el.setAttribute(attr, '')
     document.body.appendChild(el)
+    this._el = el
   }
 
   removeElement(attr, duration = 0) {
@@ -24,14 +28,13 @@ class Util {
     })
   }
 
-  createVm(parent = 'div', vm) {
-    if (!document.querySelector('[' + parent + ']')) {
+  createVm(parent = 'div', vm, more = false) {
+    if (!document.querySelector('[' + parent + ']') || more) {
       this.createElement(parent)
     }
 
     this._vm = new Vue(vm)
-    this._vm.$mount('[' + parent + ']')
+    this._vm.$mount(this._el)
     return this._vm
   }
 }
-export default new Util()

@@ -21,12 +21,17 @@
   export default{
     data() {
       return {
-        state: 0
+        state: 0,
+        util: ''
       }
     },
 
+    mounted() {
+      this.util = new Util()
+    },
+
     destroyed() {
-      Util.removeElement('[vui-backdesk]')
+      this.util.removeElement('[vui-backdesk]')
     },
 
     methods: {
@@ -44,7 +49,7 @@
         })
 
         this.state = 0
-        return Util.timeout(duration)
+        return this.util.timeout(duration)
       }
     }
   }

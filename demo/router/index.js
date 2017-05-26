@@ -9,6 +9,8 @@ import Datepicker from '../components/Datepicker'
 import Scroll from '../components/Scroll'
 import Ranger from '../components/Ranger'
 import Dropdown from '../components/Dropdown'
+import Modal from '../components/Modal'
+
 import VueScroller from 'vue-scroller'
 
 Vue.use(VueScroller)
@@ -55,6 +57,11 @@ export default new Router({
       path: '/dropdown',
       name: 'Dropdown',
       component: Dropdown
+    },
+    {
+      path: '/modal',
+      name: 'Modal',
+      component: Modal
     }
   ]
 })

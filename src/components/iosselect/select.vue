@@ -104,7 +104,8 @@
     },
 
     destroyed() {
-      Util.removeElement('[vui-select]', 200)
+      let util = new Util()
+      util.removeElement('[vui-select]', 200)
     },
 
     watch: {
