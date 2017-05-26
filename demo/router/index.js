@@ -7,7 +7,8 @@ import Action from '../components/Actions'
 import IosSelect from '../components/IosSelect'
 import Datepicker from '../components/Datepicker'
 import Scroll from '../components/Scroll'
-import Ranger from '../components/ranger'
+import Ranger from '../components/Ranger'
+import Dropdown from '../components/Dropdown'
 import VueScroller from 'vue-scroller'
 
 Vue.use(VueScroller)
@@ -49,6 +50,11 @@ export default new Router({
       path: '/scroll',
       name: 'Scroll',
       component: Scroll
+    },
+    {
+      path: '/dropdown',
+      name: 'Dropdown',
+      component: Dropdown
     }
   ]
 })
