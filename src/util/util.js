@@ -28,9 +28,9 @@ export default class Util {
     })
   }
 
-  createVm(parent = 'div', vm, more = false) {
+  createVm(vm, more = false) {
     if (!this._el) {
-      this.createElement(parent)
+      this.createElement(this._el)
     }
 
     this._vm = new Vue(vm)

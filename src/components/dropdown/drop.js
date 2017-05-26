@@ -19,7 +19,7 @@ export default class Drop {
   }
 
   create () {
-    this._vm = this._util.createVm('vui-dropdown', this._component)
+    this._vm = this._util.createVm( this._component)
     this._vm.show(this._position, this._options, this._bindEl)
   }
 
