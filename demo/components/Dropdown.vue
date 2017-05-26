@@ -26,6 +26,10 @@
         }
       },
 
+      directives: {
+        Dropdown
+      },
+
       methods: {
         dataFormatter(item, index) {
           console.log('dateformatter')

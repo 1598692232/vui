@@ -12,9 +12,11 @@ import Diabox from './components/Diabox'
 import IosSelect from './components/iosselect'
 import Ranger from './components/ranger'
 import Scroll from './components/scroll'
+import Dropdown from './components/dropdown'
 
 Vue.use(VueScroller)
 
+/* components */
 Vue.component('swiper', Swiper)
 Vue.component('Backdesk', Backdesk)
 Vue.component('Actions', Actions)
@@ -23,6 +25,8 @@ Vue.component('Diabox', Diabox)
 Vue.component('IosSelect', IosSelect)
 Vue.component('Ranger', Ranger)
 Vue.component('Scroll', Scroll)
+/* directives */
+Vue.directive('dropdown', Dropdown)
 
 export default {
   Swiper,
@@ -32,5 +36,6 @@ export default {
   Diabox,
   IosSelect,
   Ranger,
-  Scroll
+  Scroll,
+  Dropdown
 }

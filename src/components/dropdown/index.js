@@ -1,7 +1,6 @@
-import Vue from 'vue'
 import dropdown from './dropdown'
 import Drop from './drop'
-Vue.directive('dropdown', {
+export default {
   bind (el, binding, vnode) {
     let drop = null
 
@@ -19,4 +18,4 @@ Vue.directive('dropdown', {
     document.addEventListener('click', removeDropdown)
     document.addEventListener('touchmove', removeDropdown)
   }
-})
+}
