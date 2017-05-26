@@ -13,7 +13,6 @@ export default class Util {
     this._el = document.createElement(tag || 'div')
     this._el.setAttribute(attr, '')
     document.body.appendChild(this._el)
-    console.log(1123123)
   }
 
   removeElement(attr, duration = 0) {
