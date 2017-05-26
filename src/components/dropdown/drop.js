@@ -9,7 +9,7 @@ export default class Drop {
     this._position = {x: pos.x, y: pos.y}
     this._options = options
     this._bindEl = el
-    this._util = new Util()
+    this._util = new Util('vui-dropdown')
     this.getBindElHeight()
     this.create()
   }
@@ -19,7 +19,7 @@ export default class Drop {
   }
 
   create () {
-    this._vm = this._util.createVm( this._component)
+    this._vm = this._util.createVm(this._component)
     this._vm.show(this._position, this._options, this._bindEl)
   }
 

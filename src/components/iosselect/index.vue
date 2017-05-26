@@ -68,7 +68,7 @@
 
     mounted() {
       let _$ = this
-      _$.util = new Util()
+      _$.util = new Util('vui-select')
       channel.$on('selectok', (val) => {
         _$.val = ''
         val.forEach((v, k) => {
@@ -100,7 +100,7 @@
         let backdesk = document.querySelector('[vui-backdesk]')
 
         if (!document.querySelector('[vui-select]')) {
-          this.util.createElement('vui-select')
+          this.util = new Util('vui-select')
         }
 
         let SelectCom = Vue.extend(iosSelect)

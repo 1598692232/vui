@@ -7,12 +7,12 @@ import Util from '../../util/util'
 class VuiBackDesk {
   constructor() {
     this._vm = undefined
-    this._util = new Util()
+    this._util = new Util('vui-backdesk')
   }
 
   show(allowTouchMove) {
     if (!document.querySelector('[vui-backdesk]')) {
-      this._util.createElement('vui-backdesk')
+      this._util = new Util('vui-backdesk')
     }
 
     this._vm = new Vue(backDesk)

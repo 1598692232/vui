@@ -3,15 +3,16 @@
  */
 import Vue from 'vue'
 export default class Util {
-  constructor() {
+  constructor(attr, tag) {
     this._el = null
+    this._vm = null
+    this.createElement(attr, tag)
   }
 
   createElement(attr, tag) {
-    let el = document.createElement(tag || 'div')
-    el.setAttribute(attr, '')
-    document.body.appendChild(el)
-    this._el = el
+    this._el = document.createElement(tag || 'div')
+    this._el.setAttribute(attr, '')
+    document.body.appendChild(this._el)
   }
 
   removeElement(attr, duration = 0) {
@@ -29,10 +30,6 @@ export default class Util {
   }
 
   createVm(vm, more = false) {
-    if (!this._el) {
-      this.createElement(this._el)
-    }
-
     this._vm = new Vue(vm)
     this._vm.$mount(this._el)
     return this._vm
