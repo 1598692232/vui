@@ -4,14 +4,16 @@
 import Vue from 'vue'
 import modal from './modal'
 import Util from '../../util/util'
+import ModalCache from './modalCache'
 class ManagerModal {
   constructor() {
     this._util = new Util()
     this._modalVM = null
     this._comVM = null
     this._modalParent = null
-    this.modalVMArgs = []
+    this._count = 0
   }
+
   createModalParent(component, options) {
     this._modalParent = this._util.createElement('vui-modal-' +  parseInt(Math.random() * 100))
     this._modalVM = Vue.extend(modal)
@@ -30,14 +32,14 @@ class ManagerModal {
     this._comVM.$mount(this._modalVM.$el.querySelector('[vui-modal-content]'))
     return new Promise((resolve, reject) => {
       resolve(this._modalVM)
-      this.modalVMArgs.push(this._modalVM)
-      console.log( this.modalVMArgs)
+      ModalCache._modalVMArgs[ModalCache._count] = this._modalVM
+      this._modalVM.$data.index = ModalCache._count++
     })
   }
 
   destroy(index) {
-    this.modalVMArgs[index].hide()
-    this.modalVMArgs.splice(index, 1)
+    ModalCache._modalVMArgs[index].hide(false)
+    ModalCache.remove(index)
   }
 }
 export default new ManagerModal()

@@ -29,7 +29,6 @@
           $managerModal.createModalParent(MutileModal2, {
             title: '这是标题',
             direction: 'right'
-//            sliderBar: true
           })
         },
         dataFormatter(item, index) {
@@ -46,7 +45,6 @@
         },
 
         hide() {
-          console.log($managerModal.modalVMArgs, 94949)
           $managerModal.destroy(0)
         }
       }
