@@ -58,17 +58,9 @@
       }
     },
 
-    directives: {
-      iosselect: {
-        bind(el, binding, vnode) {
-
-        }
-      }
-    },
-
     mounted() {
       let _$ = this
-      _$.util = new Util('vui-select')
+      _$.util = new Util()
       channel.$on('selectok', (val) => {
         _$.val = ''
         val.forEach((v, k) => {
@@ -100,7 +92,7 @@
         let backdesk = document.querySelector('[vui-backdesk]')
 
         if (!document.querySelector('[vui-select]')) {
-          this.util = new Util('vui-select')
+          this.util.createElement('vui-select')
         }
 
         let SelectCom = Vue.extend(iosSelect)

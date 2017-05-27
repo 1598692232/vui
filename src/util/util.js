@@ -6,7 +6,7 @@ export default class Util {
   constructor(attr, tag) {
     this._el = null
     this._vm = null
-    this.createElement(attr, tag)
+    // this.createElement(attr, tag)
   }
 
   createElement(attr, tag) {

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <button v-modal="" style="display: inline-block;float: left;margin:0 20px;">弹出modal</button>
+        <button v-modal="{title:'123'}" style="display: inline-block;float: left;margin:0 20px;">弹出modal</button>
     </div>
 </template>
 <style>
