@@ -29,6 +29,7 @@
           $managerModal.createModalParent(MutileModal2, {
             title: '这是标题',
             direction: 'right'
+//            sliderBar: true
           })
         },
         dataFormatter(item, index) {

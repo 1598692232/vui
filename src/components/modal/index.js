@@ -20,6 +20,7 @@ class ManagerModal {
         title: options.title || 'title',
         theme: options.theme || '#fff',
         direction: options.direction || 'bottom',
+        sliderBar: options.sliderBar || false,
         onHide: options.onHide || null,
         render: options.render || null
       }
@@ -30,6 +31,7 @@ class ManagerModal {
     return new Promise((resolve, reject) => {
       resolve(this._modalVM)
       this.modalVMArgs.push(this._modalVM)
+      console.log( this.modalVMArgs)
     })
   }
 

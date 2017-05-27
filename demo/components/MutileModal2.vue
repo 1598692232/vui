@@ -1,12 +1,14 @@
 <template>
     <div>
         <button @click="show()">modal2</button>
+        <button @click="hide()">close</button>
     </div>
 </template>
 <style>
 
 </style>
 <script>
+    import $managerModal from '@/components/modal/index.js'
     export default {
       data() {
         return {
@@ -16,6 +18,11 @@
 
       methods: {
         show() {
+        },
+
+        hide() {
+          console.log($managerModal.modalVMArgs, 94949)
+          $managerModal.destroy(1)
         }
       }
     }
