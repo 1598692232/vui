@@ -275,7 +275,7 @@
         hide() {
           let _$ = this
           _$.close = true
-          console.log('hidehide',  _$.close)
+          _$.$forceUpdate()
           _$.$el.addEventListener('animationend', () => {
             document.body.removeChild(_$.$el)
             _$.onHide && _$.onHide()
