@@ -12,7 +12,9 @@ class ManagerModal {
     this._comVM = null
     this._modalParent = null
     this._count = 0
+    this.modalVMArgs = ModalCache._modalVMArgs
   }
+
 
   createModalParent(component, options) {
     this._modalParent = this._util.createElement('vui-modal-' +  parseInt(Math.random() * 100))
