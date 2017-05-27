@@ -13,6 +13,7 @@ export default class Util {
     this._el = document.createElement(tag || 'div')
     this._el.setAttribute(attr, '')
     document.body.appendChild(this._el)
+    return this._el
   }
 
   removeElement(attr, duration = 0) {
@@ -29,7 +30,7 @@ export default class Util {
     })
   }
 
-  createVm(vm, more = false) {
+  createVm(vm) {
     this._vm = new Vue(vm)
     this._vm.$mount(this._el)
     return this._vm

@@ -4,8 +4,8 @@
             <header class="vui-modal-header">
                 <p></p>
             </header>
-            <section>
-                <slot></slot>
+            <section vui-modal-content>
+
             </section>
         </div>
     </div>
@@ -22,8 +22,8 @@
 </style>
 <script>
     export default {
-        data() {
-            return {}
-        }
+      data() {
+        return {}
+      }
     }
 </script>
