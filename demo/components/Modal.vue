@@ -7,23 +7,37 @@
 
 </style>
 <script>
-    import ManagerModal from '@/components/modal/index.js'
+    import $managerModal from '@/components/modal/index.js'
     import MutileModal from './MutileModal'
     export default {
       data() {
         return {
-          list: [1, 2, 3, 4]
+          list: [1, 2, 3, 4],
+          modal: null
         }
       },
 
       created () {
-        window.MutileModal = MutileModal
+//        window.MutileModal = MutileModal
+        window.modal = null
       },
 
       methods: {
         show() {
-          let mm = new ManagerModal()
-          mm.createModalParent(MutileModal, {})
+//          let mm = new ManagerModal()
+          $managerModal.createModalParent(MutileModal, {
+            title: '这里是标题1',
+            theme: '#f00',
+            render() {
+              console.log('render')
+            },
+            onHide() {
+              console.log('onHide')
+            }
+          }).then((modal) => {
+            console.log(modal, 7575)
+            window.modal = modal
+          })
         }
       }
     }

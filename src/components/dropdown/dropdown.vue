@@ -15,7 +15,7 @@
         padding:10px;
         border-radius: 3px;
         animation:fade 0.3s cubic-bezier(0.23, 1, 0.32, 1) forwards ;
-        -webkit-animation:fade 0.3s cubic-bezier(0.23, 1, 0.32, 1) 0ms forwards ;
+        -webkit-animation:fade 0.3s cubic-bezier(0.23, 1, 0.32, 1) forwards ;
     }
     .vui-dropdown li{
         list-style: none;
