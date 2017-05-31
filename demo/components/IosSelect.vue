@@ -11,12 +11,7 @@
   </div>
 </template>
 <style lang="less">
-  .demo{
-    div{
-      width:100%;
-      background: #fff;
-    }
-  }
+  @import "../assets/demo.less";
 </style>
 <script>
   import iosSelect from '@/components/iosselect/index'

@@ -24,25 +24,16 @@ module.exports = {
           formatter: require('eslint-friendly-formatter')
         }
       },
-	    // {
-		  //   test: /\.vue$/,
-		  //   loader: 'vue',
-		  //   options: {
-			//     loaders: {
-			// 	    css: ExtractTextPlugin.extract({
-			// 		    loader: 'css-loader',
-			// 		    fallbackLoader: 'vue-style-loader' // <- this is a dep of vue-loader, so no need to explicitly install if using npm3
-			// 	    })
-			//     }
-		  //   }
-	    // },
 	    {
 		    test: /\.vue$/,
 		    loader: 'vue-loader',
 		    options: {
 			    loaders: {
+				    css: ExtractTextPlugin.extract({
+					    loader: 'css-loader',
+					    fallbackLoader: 'vue-style-loader' // <- this is a dep of vue-loader, so no need to explicitly install if using npm3
+				    })
 			    }
-			    // other vue-loader options go here
 		    }
 	    },
       {
@@ -60,7 +51,13 @@ module.exports = {
     ]
   },
 	plugins: [
-		// new ExtractTextPlugin("style.css"),
+		new ExtractTextPlugin("style.css"),
+		new webpack.LoaderOptionsPlugin({
+			vue: {
+				// 使用用户自定义插件
+				postcss: [require('postcss-cssnext')()]
+			}
+		})
 	],
   resolve: {
     extensions: ['.js', '.vue', '.json'],
