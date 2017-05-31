@@ -3,9 +3,6 @@
   <input type="text" placeholder="点击显示select" @click="showBack" v-model="val" :style="inputStyle">
 </div>
 </template>
-<style>
-
-</style>
 <script>
   import Vue from 'vue'
   import VueScroller from 'vue-scroller'

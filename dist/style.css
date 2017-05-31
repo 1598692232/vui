@@ -1,0 +1,630 @@
+#app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 60px
+}
+
+* {
+    margin: 0;
+    padding: 0
+}
+
+.vui-swiper ul li[data-v-31181d86] {
+    list-style: none
+}
+
+.vui-swiper[data-v-31181d86] {
+    width: 100%;
+    min-height: 200px;
+    overflow: hidden;
+    position: relative
+}
+
+.vui-swiper ul[data-v-31181d86], .vui-swiper ul li[data-v-31181d86] {
+    position: absolute;
+    height: 100%;
+    width: 100%
+}
+
+.vui-swiper ul li[data-v-31181d86] {
+    top: 0;
+    background-color: #0a9dc7;
+    z-index: -1
+}
+
+.dialog-body {
+    box-sizing: border-box;
+    max-width: 80%;
+    min-width: 50%;
+    padding: 10px;
+    background: #fff;
+    margin: 0 auto
+}
+
+.dialog-body title {
+    width: 100%;
+    text-align: center
+}
+
+.overlay {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    background: rgba(0, 0, 0, .5)
+}
+
+.overlay .over-body {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: table
+}
+
+.overlay .over-body > div {
+    display: table-cell;
+    vertical-align: middle
+}
+
+.action-body {
+    width: 100%;
+    position: absolute;
+    background: #eee;
+    z-index: 1000;
+    animation: action-body-active .5s cubic-bezier(.23, 1, .32, 1) forwards;
+    -webkit-animation: action-body-active .5s cubic-bezier(.23, 1, .32, 1) forwards;
+    -moz-animation: action-body-active .5s cubic-bezier(.23, 1, .32, 1) forwards;
+    -o-animation: action-body-active .5s cubic-bezier(.23, 1, .32, 1) forwards
+}
+
+.action-list li {
+    line-height: 2
+}
+
+@keyframes action-body-active {
+    0% {
+        bottom: -500px
+    }
+    to {
+        bottom: 0
+    }
+}
+
+@-webkit-keyframes action-body-active {
+    0% {
+        bottom: -500px
+    }
+    to {
+        bottom: 0
+    }
+}
+
+.vui-back {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, .5)
+}
+
+.vui-select {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: #f5f5f5;
+    z-index: 2;
+    transition: all .3s cubic-bezier(.23, 1, .32, 1) 0ms
+}
+
+.vui-select.active {
+    bottom: 0
+}
+
+.vui-select-header {
+    box-sizing: border-box;
+    padding: 0 15px;
+    box-shadow: 2px 2px 3px #ddd
+}
+
+.vui-select-header:after {
+    content: "";
+    display: block;
+    clear: both
+}
+
+.vui-select-cancel {
+    float: left;
+    line-height: 45px;
+    color: #666;
+    font-size: 13px
+}
+
+.vui-select-ok {
+    float: right;
+    color: #ff8447;
+    line-height: 45px;
+    font-size: 13px
+}
+
+.vui-select-body {
+    height: 238px
+}
+
+.vui-select-list {
+    width: 100%
+}
+
+.vui-select-list .vui-select-item {
+    line-height: 35px;
+    height: 35px;
+    text-align: center;
+    opacity: .1
+}
+
+.vui-select-lists {
+    position: relative;
+    float: left;
+    height: 245px
+}
+
+.vui-select-enter-active, .vui-select-leave-active {
+    transition: all .5s
+}
+
+.vui-select-enter {
+    bottom: -100%
+}
+
+.vui-scroll-body[data-v-328794ca] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto
+}
+
+.vui-scroll-inner[data-v-328794ca] {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: auto;
+    transition: -webkit-transform .3s;
+    transition: transform .3s;
+    transition: transform .3s, -webkit-transform .3s;
+    -webkit-transition: transform .3s
+}
+
+.vui-touching .vui-scroll-inner[data-v-328794ca] {
+    transition: -webkit-transform 0s;
+    transition: transform 0s;
+    transition: transform 0s, -webkit-transform 0s;
+    -webkit-transition: transform 0s
+}
+
+.vui-scroll-refresh[data-v-328794ca] {
+    display: block;
+    width: 100%;
+    background-color: red
+}
+
+.vui-scroll-load[data-v-328794ca] {
+    display: none;
+    height: 44px;
+    width: 100%;
+    background-color: #00f
+}
+
+.vui-pull-up .vui-scroll-refresh[data-v-328794ca], .vui-refreshing .vui-scroll-refresh[data-v-328794ca] {
+    background-color: #00c853
+}
+
+.vui-pull-down .vui-scroll-load[data-v-328794ca] {
+    display: block
+}
+
+.vui-scroll-body[data-v-328794ca]::-webkit-scrollbar {
+    width: 0;
+    height: 0
+}
+
+.demo {
+    padding: 0 15px
+}
+
+.vui-ranger {
+    position: relative
+}
+
+.vui-ranger .vui-ranger-value {
+    position: absolute;
+    width: 200px;
+    left: 50%;
+    top: -15px;
+    margin-left: -100px;
+    text-align: center
+}
+
+.vui-ranger .vui-ranger-content {
+    width: 100%;
+    height: 28px;
+    box-sizing: border-box;
+    padding: 0 12px;
+    position: relative
+}
+
+.vui-ranger .vui-ranger-lmin {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: -15px
+}
+
+.vui-ranger .vui-ranger-lmax {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: -15px
+}
+
+.vui-ranger .vui-ranger-content > .vui-ranger-body {
+    width: 100%;
+    position: relative
+}
+
+.vui-ranger .vui-ranger-connect-line {
+    position: absolute;
+    top: 12px;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    background: #6281c2;
+    border-radius: 2px
+}
+
+.vui-ranger .vui-ranger-cover2 {
+    right: 0
+}
+
+.vui-ranger .vui-ranger-cover1, .vui-ranger .vui-ranger-cover2 {
+    position: absolute;
+    top: 12px;
+    height: 3px;
+    z-index: 1;
+    background: #e1e1e1
+}
+
+.vui-ranger .vui-ranger-cover1 {
+    left: 0
+}
+
+.vui-ranger .vui-drag1 {
+    left: -12px
+}
+
+.vui-ranger .vui-drag2 {
+    right: -13px
+}
+
+.vui-ranger .vui-drag1, .vui-ranger .vui-drag2 {
+    position: absolute;
+    top: 0;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #fff;
+    border: 1px solid #e1e1e1;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .2);
+    z-index: 1
+}
+
+.vui-ranger .vui-setting {
+    transition: all .3s cubic-bezier(.23, 1, .32, 1) 0ms
+}
+
+.vui-dropdown {
+    position: fixed;
+    background: #fff;
+    box-shadow: 0 0 1px #666;
+    padding: 10px;
+    border-radius: 3px;
+    animation: fade .3s cubic-bezier(.23, 1, .32, 1) forwards;
+    -webkit-animation: fade .3s cubic-bezier(.23, 1, .32, 1) forwards
+}
+
+.vui-dropdown li {
+    list-style: none
+}
+
+@-webkit-keyframes fade {
+    0% {
+        -webkit-transform: translateY(-20px);
+        transform: translateY(-20px);
+        opacity: 0
+    }
+    to {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        opacity: 1
+    }
+}
+
+@keyframes fade {
+    0% {
+        -webkit-transform: translateY(-20px);
+        transform: translateY(-20px);
+        opacity: 0
+    }
+    to {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        opacity: 1
+    }
+}
+
+.vui-modal {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #a9a9a9
+}
+
+.vui-modal-bottom-enter {
+    animation: slide-bottom-enter .3s cubic-bezier(.23, 1, .32, 1) forwards;
+    -webkit-animation: slide-bottom-enter .3s cubic-bezier(.23, 1, .32, 1) forwards
+}
+
+.vui-modal-bottom-leave {
+    animation: slide-bottom-leave .3s cubic-bezier(.23, 1, .32, 1) forwards;
+    -webkit-animation: slide-bottom-leave .3s cubic-bezier(.23, 1, .32, 1) forwards
+}
+
+.vui-modal-up-enter {
+    animation: slide-up-enter .3s cubic-bezier(.23, 1, .32, 1) forwards;
+    -webkit-animation: slide-up-enter .3s cubic-bezier(.23, 1, .32, 1) forwards
+}
+
+.vui-modal-up-leave {
+    animation: slide-up-leave .3s cubic-bezier(.23, 1, .32, 1) forwards;
+    -webkit-animation: slide-up-leave .3s cubic-bezier(.23, 1, .32, 1) forwards
+}
+
+.vui-modal-left-enter {
+    animation: slide-left-enter .3s cubic-bezier(.23, 1, .32, 1) forwards;
+    -webkit-animation: slide-left-enter .3s cubic-bezier(.23, 1, .32, 1) forwards
+}
+
+.vui-modal-left-leave {
+    animation: slide-left-leave .3s cubic-bezier(.23, 1, .32, 1) forwards;
+    -webkit-animation: slide-left-leave .3s cubic-bezier(.23, 1, .32, 1) forwards
+}
+
+.vui-modal-right-enter {
+    animation: slide-right-enter .3s cubic-bezier(.23, 1, .32, 1) forwards;
+    -webkit-animation: slide-right-enter .3s cubic-bezier(.23, 1, .32, 1) forwards
+}
+
+.vui-modal-right-leave {
+    animation: slide-right-leave .3s cubic-bezier(.23, 1, .32, 1) forwards;
+    -webkit-animation: slide-right-leave .3s cubic-bezier(.23, 1, .32, 1) forwards
+}
+
+.vui-modal .vui-modal-header {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 44px;
+    width: 100%
+}
+
+.vui-modal .vui-modal-header > p {
+    width: 70%;
+    float: left;
+    margin-left: 15%;
+    text-align: center;
+    line-height: 44px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
+
+.vui-modal .vui-modal-header > .vui-modal-close {
+    display: inline-block;
+    padding: 0 10px;
+    max-width: 15%;
+    line-height: 44px;
+    height: 44px;
+    float: right;
+    background: transparent;
+    border: none
+}
+
+.vui-modal .vui-modal-content {
+    margin-top: 44px
+}
+
+@-webkit-keyframes slide-bottom-enter {
+    0% {
+        top: 100%;
+        left: 0
+    }
+    to {
+        top: 0;
+        left: 0
+    }
+}
+
+@keyframes slide-bottom-enter {
+    0% {
+        top: 100%;
+        left: 0
+    }
+    to {
+        top: 0;
+        left: 0
+    }
+}
+
+@-webkit-keyframes slide-bottom-leave {
+    0% {
+        top: 0;
+        left: 0
+    }
+    to {
+        top: 100%;
+        left: 0
+    }
+}
+
+@keyframes slide-bottom-leave {
+    0% {
+        top: 0;
+        left: 0
+    }
+    to {
+        top: 100%;
+        left: 0
+    }
+}
+
+@-webkit-keyframes slide-left-enter {
+    0% {
+        left: -100%;
+        top: 0
+    }
+    to {
+        top: 0;
+        left: 0
+    }
+}
+
+@keyframes slide-left-enter {
+    0% {
+        left: -100%;
+        top: 0
+    }
+    to {
+        top: 0;
+        left: 0
+    }
+}
+
+@-webkit-keyframes slide-left-leave {
+    0% {
+        top: 0;
+        left: 0
+    }
+    to {
+        left: -100%;
+        top: 0
+    }
+}
+
+@keyframes slide-left-leave {
+    0% {
+        top: 0;
+        left: 0
+    }
+    to {
+        left: -100%;
+        top: 0
+    }
+}
+
+@-webkit-keyframes slide-right-enter {
+    0% {
+        right: -100%;
+        top: 0
+    }
+    to {
+        top: 0;
+        right: 0
+    }
+}
+
+@keyframes slide-right-enter {
+    0% {
+        right: -100%;
+        top: 0
+    }
+    to {
+        top: 0;
+        right: 0
+    }
+}
+
+@-webkit-keyframes slide-right-leave {
+    0% {
+        top: 0;
+        right: 0
+    }
+    to {
+        right: -100%;
+        top: 0
+    }
+}
+
+@keyframes slide-right-leave {
+    0% {
+        top: 0;
+        right: 0
+    }
+    to {
+        right: -100%;
+        top: 0
+    }
+}
+
+@-webkit-keyframes slide-up-enter {
+    0% {
+        left: 0;
+        top: -100%
+    }
+    to {
+        left: 0;
+        top: 0
+    }
+}
+
+@keyframes slide-up-enter {
+    0% {
+        left: 0;
+        top: -100%
+    }
+    to {
+        left: 0;
+        top: 0
+    }
+}
+
+@-webkit-keyframes slide-up-leave {
+    0% {
+        left: 0;
+        top: 0
+    }
+    to {
+        left: 0;
+        top: -100%
+    }
+}
+
+@keyframes slide-up-leave {
+    0% {
+        left: 0;
+        top: 0
+    }
+    to {
+        left: 0;
+        top: -100%
+    }
+}
+
+/*# sourceMappingURL=style.css.map*/

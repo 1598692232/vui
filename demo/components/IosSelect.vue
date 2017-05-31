@@ -10,9 +10,6 @@
     </div>
   </div>
 </template>
-<style lang="less">
-  @import "../assets/demo.less";
-</style>
 <script>
   import iosSelect from '@/components/iosselect/index'
   export default{
