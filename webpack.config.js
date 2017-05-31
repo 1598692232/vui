@@ -1,5 +1,6 @@
 var path = require('path')
 var webpack = require('webpack')
+var ExtractTextPlugin = require("extract-text-webpack-plugin")
 
 function resolve (dir) {
   return path.join(__dirname, '/', dir)
@@ -23,15 +24,27 @@ module.exports = {
           formatter: require('eslint-friendly-formatter')
         }
       },
-      {
-        test: /\.vue$/,
-        loader: 'vue-loader',
-        options: {
-          loaders: {
-          }
-          // other vue-loader options go here
-        }
-      },
+	    // {
+		  //   test: /\.vue$/,
+		  //   loader: 'vue',
+		  //   options: {
+			//     loaders: {
+			// 	    css: ExtractTextPlugin.extract({
+			// 		    loader: 'css-loader',
+			// 		    fallbackLoader: 'vue-style-loader' // <- this is a dep of vue-loader, so no need to explicitly install if using npm3
+			// 	    })
+			//     }
+		  //   }
+	    // },
+	    {
+		    test: /\.vue$/,
+		    loader: 'vue-loader',
+		    options: {
+			    loaders: {
+			    }
+			    // other vue-loader options go here
+		    }
+	    },
       {
         test: /\.js$/,
         loader: 'babel-loader',
@@ -46,6 +59,9 @@ module.exports = {
       }
     ]
   },
+	plugins: [
+		// new ExtractTextPlugin("style.css"),
+	],
   resolve: {
     extensions: ['.js', '.vue', '.json'],
     alias: {

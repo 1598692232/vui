@@ -10,6 +10,14 @@
     </div>
   </div>
 </template>
+<style lang="less">
+  .demo{
+    div{
+      width:100%;
+      background: #fff;
+    }
+  }
+</style>
 <script>
   import iosSelect from '@/components/iosselect/index'
   export default{
@@ -37,6 +45,7 @@
           {value: 13, text: 13},
           {value: 14, text: 14},
           {value: 15, text: 15}
+
         ], [
           {value: 1, text: 1},
           {value: 2, text: 2},
