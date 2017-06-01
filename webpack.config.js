@@ -104,7 +104,10 @@ module.exports = {
 			filename: 'index.tpl.html',
 			template: 'index.html',
 			inject: true
-		})
+		}),
+		new webpack.optimize.OccurrenceOrderPlugin(),
+		new webpack.HotModuleReplacementPlugin(),
+		new webpack.NoEmitOnErrorsPlugin(),
 	],
   resolve: {
     extensions: ['.js', '.vue', '.json'],
@@ -115,12 +118,12 @@ module.exports = {
   },
   devServer: {
     historyApiFallback: true,
-    noInfo: true
+    noInfo: true,
+	 port: 3000
   },
   performance: {
     hints: false
   },
-  watch: true,
   devtool: '#eval-source-map' //每个module会通过eval()来执行，并且生成一个DataUrl形式的SourceMap.
 }
 
@@ -128,6 +131,7 @@ if (process.env.NODE_ENV === 'production') {
   module.exports.devtool = '#source-map' //生成一个SourceMap文件.
   // http://vue-loader.vuejs.org/en/workflow/production.html
   module.exports.entry = './src/index.js'
+  module.exports.watch = true
   module.exports.output = {
 	  path: path.resolve(__dirname, './dist'),
 	  publicPath: '/dist/',
