@@ -6,6 +6,23 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin")
 function resolve (dir) {
   return path.join(__dirname, '/', dir)
 }
+var styleRule = process.env.NODE_ENV == 'production'
+	? 	{
+			test: /\.(vue|less)$/,
+			loader: 'vue-loader',
+			options: {
+				loaders: {
+					css: ExtractTextPlugin.extract({
+						loader: 'css-loader',
+						fallbackLoader: 'vue-style-loader' // <- this is a dep of vue-loader, so no need to explicitly install if using npm3
+					})
+				}
+			}
+		}
+	: {
+			test: /\.(vue|less)$/,
+			loader: 'vue-loader'
+     }
 
 var rules =  [
 	{
@@ -17,13 +34,7 @@ var rules =  [
 			formatter: require('eslint-friendly-formatter')
 		}
 	},
-	{
-		test: /\.(vue|less)$/,
-		loader: 'vue-loader',
-		options: {
-			loaders: {}
-		}
-	},
+	styleRule,
 	{
 		test: /\.js$/,
 		loader: 'babel-loader',
@@ -35,52 +46,10 @@ var rules =  [
 	},
 	{
 		test: /\.(png|jpg|gif|svg)$/,
-		loader: 'file-loader',
-		options: {
-			name: '[name].[ext]?[hash]'
-		}
-	}
+		loader: 'url-loader?limit=8192&name=[name].[ext]?[hash]'
+	},
 ]
 
-var rules2 =  [
-	{
-		test: /\.(js|vue)$/,
-		loader: 'eslint-loader',
-		enforce: 'pre',
-		include: [resolve('src'), resolve('demo')],
-		options: {
-			formatter: require('eslint-friendly-formatter')
-		}
-	},
-	{
-		test: /\.(vue|less)$/,
-		loader: 'vue-loader',
-		options: {
-			loaders: {
-				css: ExtractTextPlugin.extract({
-					loader: 'css-loader',
-					fallbackLoader: 'vue-style-loader' // <- this is a dep of vue-loader, so no need to explicitly install if using npm3
-				})
-			}
-		}
-	},
-	{
-		test: /\.js$/,
-		loader: 'babel-loader',
-		exclude: /node_modules/
-	},
-	{
-		test: /\.(css|less)/,
-		use: [ 'style-loader', 'css-loader','less-loader' ]
-	},
-	{
-		test: /\.(png|jpg|gif|svg)$/,
-		loader: 'file-loader',
-		options: {
-			name: '[name].[ext]?[hash]'
-		}
-	}
-]
 
 
 module.exports = {
@@ -105,8 +74,8 @@ module.exports = {
 			template: 'index.html',
 			inject: true
 		}),
-		new webpack.optimize.OccurrenceOrderPlugin(),
-		new webpack.HotModuleReplacementPlugin(),
+		new webpack.optimize.OccurrenceOrderPlugin(), // 根据模块调用次数，给模块分配ids，常被调用的ids分配更短的id，使得ids可预测，降低文件大小，该模块推荐使用
+		// new webpack.HotModuleReplacementPlugin(),
 		new webpack.NoEmitOnErrorsPlugin(),
 	],
   resolve: {
@@ -117,6 +86,7 @@ module.exports = {
     }
   },
   devServer: {
+	 // contentBase: "./test",
     historyApiFallback: true,
     noInfo: true,
 	 port: 3000
@@ -152,7 +122,6 @@ if (process.env.NODE_ENV === 'production') {
     new webpack.LoaderOptionsPlugin({
       minimize: true
     }),
-	  new ExtractTextPlugin("style.css")
+	  new ExtractTextPlugin("vui.css")
   ])
-	module.exports.module.rules = rules2
 }

@@ -8,10 +8,18 @@
         <button v-dropdown="{dropList:list3,dataFormatter:dataFormatter,dropClick:dropClick,render:render}" style="display: inline-block;float: left;margin:0 20px;">adasd</button>
         <div style="height:50px;"></div>
         <button v-dropdown="{dropList:list4,dataFormatter:dataFormatter,dropClick:dropClick,render:render}" style="display: inline-block;float: left;margin:0 20px;">adasd</button>
+        <div>
+            <img src="./1.jpg" alt="">
+            <div class="img"></div>
+        </div>
     </div>
 </template>
 <style>
-
+    .img{
+        width:200px;
+        height:100px;
+        background-image: url('./1.jpg');
+    }
 </style>
 <script>
     import Dropdown from '@/components/dropdown/index.js'
