@@ -120,6 +120,7 @@ module.exports = {
   performance: {
     hints: false
   },
+  watch: true,
   devtool: '#eval-source-map' //每个module会通过eval()来执行，并且生成一个DataUrl形式的SourceMap.
 }
 
