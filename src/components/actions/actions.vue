@@ -15,23 +15,30 @@
 <style>
     .action-body{
         width:100%;
-        position: absolute;
+        position: fixed;
+        bottom:0;
+        left:0;
         background: #eee;
         z-index:1000;
-        animation:action-body-active 0.5s cubic-bezier(0.23, 1, 0.32, 1) forwards;
-        -webkit-animation:action-body-active 0.5s cubic-bezier(0.23, 1, 0.32, 1) forwards;
-        -moz-animation:action-body-active 0.5s cubic-bezier(0.23, 1, 0.32, 1) forwards;
-        -o-animation:action-body-active 0.5s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+        animation:action-show 0.3s cubic-bezier(0.23, 1, 0.32, 1) forwards;
     }
     .action-list li{
         line-height: 2;
     }
-    @keyframes action-body-active{
+    @keyframes action-show{
         0%{
-            bottom:-500px;
+            transform:translateY(100%)
         }
         100%{
-            bottom:0;
+            transform:translateY(0)
+        }
+    }
+    @keyframes action-hide{
+        0%{
+            transform:translateY(0)
+        }
+        100%{
+            transform:translateY(100%)
         }
     }
 </style>
@@ -50,8 +57,11 @@
       },
 
       destroyed() {
-        let util = new Util()
-        util.removeElement('[vui-action]', 200)
+        this.$el.querySelector('.action-body').style.animation = 'action-hide 0.3s cubic-bezier(0.23, 1, 0.32, 1) forwards'
+        setTimeout(() => {
+          let util = new Util()
+          util.removeElement('[vui-action]', 200)
+        }, 350)
       },
 
       methods: {
