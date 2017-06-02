@@ -1,7 +1,5 @@
 <template>
   <div class="demo">
-    <!--<button v-overlay.id="'a1'" :actions="true">modal</button>-->
-    <!--<actions aid="a1" :actions="acts"></actions>-->
     <button v-action="{actionList:acts, actionEvent:actionClick}">action</button>
     <button v-action="{actionList:acts2, actionEvent:actionClick}">action2</button>
   </div>
