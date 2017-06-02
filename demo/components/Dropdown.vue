@@ -9,7 +9,7 @@
         <div style="height:50px;"></div>
         <button v-dropdown="{dropList:list4,dataFormatter:dataFormatter,dropClick:dropClick,render:render}" style="display: inline-block;float: left;margin:0 20px;">adasd</button>
         <div>
-            <img src="./1.jpg" alt="">
+            <img src="./assets/1.jpg" alt="">
             <div class="img"></div>
         </div>
     </div>
@@ -18,7 +18,7 @@
     .img{
         width:200px;
         height:100px;
-        background-image: url('./1.jpg');
+        background-image: url('./assets//1.jpg');
     }
 </style>
 <script>

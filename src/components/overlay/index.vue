@@ -16,6 +16,7 @@
     height:100%;
     z-index:100;
     background: rgba(0,0,0,0.5);
+    animation: show 0.3s linear forwards;
   }
   .overlay .over-body{
     position: relative;
@@ -26,6 +27,14 @@
   .overlay .over-body > div{
     display: table-cell;
     vertical-align: middle;
+  }
+  @keyframes show {
+    0%{
+      opacity: 0;
+    }
+    100%{
+      opacity: 1;
+    }
   }
 </style>
 <script>

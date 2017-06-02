@@ -11,6 +11,15 @@
     left:0;
     top:0;
     background: rgba(0,0,0,0.5);
+    animation: show 0.3s linear forwards;
+  }
+  @keyframes show {
+      0%{
+          opacity: 0;
+      }
+      100%{
+          opacity: 1;
+      }
   }
 </style>
 <script>
