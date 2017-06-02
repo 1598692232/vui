@@ -10,6 +10,7 @@ import Scroll from '../components/Scroll'
 import Ranger from '../components/Ranger'
 import Dropdown from '../components/Dropdown'
 import Modal from '../components/Modal'
+import Toast from '../components/Toast'
 
 import VueScroller from 'vue-scroller'
 
@@ -62,6 +63,11 @@ export default new Router({
       path: '/modal',
       name: 'Modal',
       component: Modal
+    },
+    {
+      path: '/toast',
+      name: 'Toast',
+      component: Toast
     }
   ]
 })
