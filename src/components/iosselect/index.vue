@@ -104,11 +104,10 @@
         }
 
         this.select.$data.selectList = this.selectAll
-        this.select.$data.show = true
         this.select.$data.initVal = this.initVal
         setTimeout(() => {
           this.select.initRender()
-        }, 500)
+        }, 100)
 
         backdesk.addEventListener('click', () => {
           this.hideBack()

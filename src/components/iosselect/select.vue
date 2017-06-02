@@ -1,7 +1,7 @@
 <template>
   <div vui-select>
     <transition name="vui-select">
-      <div class="vui-select" v-if="show">
+      <div class="vui-select">
         <div class="vui-select-header">
           <p class="vui-select-cancel" @click="cancelVal">取消</p>
           <p class="vui-select-ok" @click="sureVal">确定</p>
@@ -28,7 +28,8 @@
     width: 100%;
     background: #f5f5f5;
     z-index:2;
-    transition:all 300ms cubic-bezier(0.23, 1, 0.32, 1) 0ms
+    /*transition:all 300ms cubic-bezier(0.23, 1, 0.32, 1) 0ms*/
+    animation:iosselect-show 300ms cubic-bezier(0.23, 1, 0.32, 1) 0ms forwards;
   }
   .vui-select.active{
     bottom:0
@@ -78,6 +79,22 @@
   .vui-select-enter {
     bottom: -100%
   }
+  @keyframes iosselect-show {
+    0%{
+      transform:translateY(100%)
+    }
+    100%{
+      transform:translateY(0)
+    }
+  }
+  @keyframes iosselect-hide {
+     0%{
+       transform:translateY(0)
+     }
+     100%{
+       transform:translateY(100%)
+     }
+  }
 </style>
 <script>
   import Vue from 'vue'
@@ -94,7 +111,7 @@
         timer: '',
         selectList: [],
         width: '',
-        show: false,
+//        show: false,
         initVal: []
       }
     },
@@ -104,8 +121,11 @@
     },
 
     destroyed() {
-      let util = new Util()
-      util.removeElement('[vui-select]', 200)
+      this.$el.querySelector('.vui-select').style.animation = 'iosselect-hide 300ms cubic-bezier(0.23, 1, 0.32, 1) 0ms forwards'
+      setTimeout(() => {
+        let util = new Util()
+        util.removeElement('[vui-select]', 200)
+      }, 300)
     },
 
     watch: {

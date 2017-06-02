@@ -31,7 +31,7 @@
         }
     }
 }
-@keyframes hide {
+@keyframes toast-hide {
     50%{
         opacity: 1;
     }
@@ -56,7 +56,7 @@
         util.removeElement('[vui-toast]', 0)
       },
       mounted() {
-        this.$el.style.animation = `hide ${this.timeout}ms linear forwards`
+        this.$el.style.animation = `toast-hide ${this.timeout}ms linear forwards`
         setTimeout(() => {
           this.$destroy()
         }, this.timeout)

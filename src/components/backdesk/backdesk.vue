@@ -11,14 +11,22 @@
     left:0;
     top:0;
     background: rgba(0,0,0,0.5);
-    animation: show 0.3s linear forwards;
+    animation: backdesk-show 0.3s cubic-bezier(0.23, 1, 0.32, 1) 0ms forwards;
   }
-  @keyframes show {
+  @keyframes backdesk-show {
       0%{
           opacity: 0;
       }
       100%{
           opacity: 1;
+      }
+  }
+  @keyframes backdesk-hide {
+      0%{
+          opacity: 1;
+      }
+      100%{
+          opacity: 0;
       }
   }
 </style>
@@ -40,7 +48,10 @@
     },
 
     destroyed() {
-      this.util.removeElement('[vui-backdesk]')
+      this.$el.querySelector('.vui-back').style.animation = 'backdesk-hide 0.3s cubic-bezier(0.23, 1, 0.32, 1) 0ms forwards'
+      setTimeout(() => {
+        this.util.removeElement('[vui-backdesk]')
+      }, 300)
     },
 
     methods: {
