@@ -31,6 +31,14 @@
         }
     }
 }
+@keyframes hide {
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
 </style>
 <script>
     import Util from '../../util/util'
@@ -38,11 +46,20 @@
       props: {
         text: {
           type: String
+        },
+        timeout: {
+          type: Number
         }
       },
       destroyed() {
         let util = new Util()
         util.removeElement('[vui-toast]', 0)
+      },
+      mounted() {
+        this.$el.style.animation = `hide ${this.timeout}ms linear forwards`
+        setTimeout(() => {
+          this.$destroy()
+        }, this.timeout)
       }
     }
 </script>

@@ -21,13 +21,10 @@ class ToastController {
 
     this._vm = new Toast({
       propsData: {
-        text: text || ''
+        text: text || '',
+        timeout: timeout || 0
       }
     }).$mount('[vui-toast]')
-
-    setTimeout(() => {
-      this._vm.$destroy()
-    }, timeout)
   }
 }
 
