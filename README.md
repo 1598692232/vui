@@ -26,6 +26,6 @@ npm run build
 
 ## 指令
 
-* [actions](./actions)
+* [actions](./src/components/actions)
 * [dropdown](./dropdown)
 * [diabox](./diabox)
