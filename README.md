@@ -16,7 +16,7 @@ npm run build
 ```
 ## 组件列表
 
-* [iosselect](./iosselect)
+* [iosselect](./src/components/iosselect)
 * [datepicker](./datepicker)
 * [modal](./modal)
 * [ranger](./ranger)
