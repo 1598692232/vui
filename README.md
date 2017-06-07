@@ -17,12 +17,12 @@ npm run build
 ## 组件列表
 
 * [iosselect](./src/components/iosselect)
-* [datepicker](./datepicker)
-* [modal](./modal)
-* [ranger](./ranger)
-* [scroll](./scroll)
-* [swiper](./swiper)
-* [toast](./toast)
+* [datepicker](./src/components/datepicker)
+* [modal](./src/components/modal)
+* [ranger](./src/components/ranger)
+* [scroll](./src/components/scroll)
+* [swiper](./src/components/swiper)
+* [toast](./src/components/toast)
 
 ## 指令
 
