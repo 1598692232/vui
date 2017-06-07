@@ -8,7 +8,7 @@ actions
 ## Example
 
 ```html
-    <button v-action="{actionList:acts, actionEvent:actionClick}">action</button>
+<button v-action="{actionList:acts, actionEvent:actionClick}">action</button>
 ```
 
 ## Options
