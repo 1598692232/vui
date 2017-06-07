@@ -24,7 +24,7 @@ class ManagerModal {
         title: options.title || 'title',
         theme: options.theme || '#fff',
         direction: options.direction || 'bottom',
-        sliderBar: options.sliderBar || false,
+        // sliderBar: options.sliderBar || false,
         onHide: options.onHide || null,
         render: options.render || null
       }
