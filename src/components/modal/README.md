@@ -1,9 +1,9 @@
-actions
+Modal
 ==========
-底部弹框
+弹出新页面
 
 ## Type
-指令
+组件（构造）
 
 ## Example
 

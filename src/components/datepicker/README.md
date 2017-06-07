@@ -1,9 +1,9 @@
-actions
+Datepikcer
 ==========
-底部弹框
+日期选择器
 
 ## Type
-指令
+组件
 
 ## Example
 

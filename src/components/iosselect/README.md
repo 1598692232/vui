@@ -1,9 +1,9 @@
-iosselect
+Iosselect
 ==========
-底部弹框
+选择框
 
 ## Type
-指令
+组件
 
 ## Example
 

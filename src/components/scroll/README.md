@@ -1,9 +1,8 @@
-actions
+scroll
 ==========
-底部弹框
 
 ## Type
-指令
+组件
 
 ## Example
 
