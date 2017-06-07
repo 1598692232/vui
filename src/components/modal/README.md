@@ -64,6 +64,7 @@ actions
 |----------|----------|
 |onHide|隐藏触发|
 |reander|显示触发|
+|destroy|销毁|
 
 
 
