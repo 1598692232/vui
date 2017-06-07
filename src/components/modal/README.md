@@ -58,8 +58,8 @@ actions
 |----------|----------|----------|----------|
 | component | / | Y | modal里的内容，以vue组件方式传递|
 | options | / | N | 所需要的一些参数（title:标题，theme：背景颜色，direction：进入方向(left,right,up,bottom)）|
-## 事件
 
+## 事件
 | 选项 | 说明 |
 |----------|----------|
 |onHide|隐藏触发|
