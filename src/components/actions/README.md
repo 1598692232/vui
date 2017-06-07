@@ -5,13 +5,13 @@ actions
 ## Type
 指令
 
-##Example
+## Example
 
 ```html
     <button v-action="{actionList:acts, actionEvent:actionClick}">action</button>
 ```
 
-##Options
+## Options
 
 | 选项 | 默认值 | 必填 | 说明 |
 |----------|----------|----------|----------|
