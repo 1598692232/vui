@@ -122,6 +122,12 @@ if (process.env.NODE_ENV === 'production') {
     new webpack.LoaderOptionsPlugin({
       minimize: true
     }),
-	  new ExtractTextPlugin("vui.css")
+	  new ExtractTextPlugin("vui.css"),
+	  // new webpack.optimize.CommonsChunkPlugin('common.js')
+	  new webpack.optimize.CommonsChunkPlugin({
+		  name:"vui",
+		  filename:"common.js"//忽略则以name为输出文件的名字，否则以此为输出文件名字
+	  })
+
   ])
 }
