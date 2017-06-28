@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import Index from '../components/Index'
 import Swiper from '../components/Swiper'
 import Diabox from '../components/Dialog'
 // import Overlay from '@/demo/Overlay'
@@ -19,6 +20,11 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
+    {
+      path: '/',
+      name: 'Index',
+      component: Index
+    },
     {
       path: '/swiper',
       name: 'Swiper',
