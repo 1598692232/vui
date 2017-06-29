@@ -1,15 +1,22 @@
 <template>
-  <div class="demo">
+  <div>
+    <head-top title="Actions" left-url="#/"></head-top>
     <button v-action="{actionList:acts, actionEvent:actionClick}">action</button>
     <button v-action="{actionList:acts2, actionEvent:actionClick}">action2</button>
   </div>
 </template>
 <script>
   import action from '@/components/actions'
+  import headTop from './header'
   export default{
       directives: {
           action
       },
+
+      components: {
+          headTop
+      },
+
       data () {
           return {
               acts: [

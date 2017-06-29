@@ -1,6 +1,6 @@
 <template>
     <div vui-components>
-        <header class="title">Components</header>
+        <header class="title">DVUI</header>
         <div class="wrap-box wrap-6">
             <div class="com-body"  v-for="(item,i) in components">
                 <div class="com-li" v-for="(it, k) in item">
