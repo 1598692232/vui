@@ -17,18 +17,18 @@
 <script>
     import Ranger from '@/components/ranger'
     export default {
-      data() {
-        return {
-          val: [600, 900],
-          val1: 700
+        data() {
+            return {
+                val: [600, 900],
+                val1: 700
+            }
+        },
+        components: {
+            Ranger
+        },
+        methods: {
+            updating() {
+            }
         }
-      },
-      components: {
-        Ranger
-      },
-      methods: {
-        updating() {
-        }
-      }
     }
 </script>

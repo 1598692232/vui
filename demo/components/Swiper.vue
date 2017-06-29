@@ -11,47 +11,47 @@
 <script>
 import Swiper from '@/components/swiper/index'
 export default{
-  data () {
-    return {
-      data: [
+    data () {
+        return {
+            data: [
         { id: 1, value: 1, color: '#f00' },
         { id: 2, value: 2, color: '#0f0' },
         { id: 3, value: 3, color: '#00f' },
         { id: 4, value: 4, color: '#666' },
         { id: 5, value: 5, color: '#ddd' },
         { id: 6, value: 6, color: '#eee' }
-      ]
-    }
-  },
-  components: {
-    Swiper
-  },
+            ]
+        }
+    },
+    components: {
+        Swiper
+    },
 
-  mounted() {
-    let _$ = this
-    setTimeout(() => {
-      console.log(1231231)
-      _$.$refs.swiper.setActive(6)
-    }, 1000)
-  },
+    mounted() {
+        let _$ = this
+        setTimeout(() => {
+            console.log(1231231)
+            _$.$refs.swiper.setActive(6)
+        }, 1000)
+    },
 
-  methods: {
-    touchstart () {
+    methods: {
+        touchstart () {
 //      console.log('touchstart', arguments)
-    },
-    touchmove () {
+        },
+        touchmove () {
 //      console.log('touchmove', arguments)
-    },
-    touchend () {
+        },
+        touchend () {
 //      console.log('touchend', arguments)
-    },
-    renderend () {
-      console.log('renderend', arguments)
-    },
-    renderstart () {
-      console.log('renderstart', arguments)
+        },
+        renderend () {
+            console.log('renderend', arguments)
+        },
+        renderstart () {
+            console.log('renderstart', arguments)
+        }
     }
-  }
 
 }
 </script>

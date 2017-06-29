@@ -86,100 +86,100 @@
      * 对上拉刷新和加载效果进行处理
      * */
     export default{
-      props: {
-        onRefresh: {               /*刷新回调函数*/
-          type: Function,
-          default: undefined,
-          required: false
+        props: {
+            onRefresh: {               /*刷新回调函数*/
+                type: Function,
+                default: undefined,
+                required: false
+            },
+            onLoad: {                    /*加载数据*/
+                type: Function,
+                default: undefined,
+                required: false
+            },
+            offset: {                    /*刷新块高度*/
+                type: Number,
+                default: 44
+            }
         },
-        onLoad: {                    /*加载数据*/
-          type: Function,
-          default: undefined,
-          required: false
+        data() {
+            return {
+                startY: 0,
+                state: 0,    /*0：正常状态，1：确定要刷新数据，处touchmove状态，2：上拉刷新touchend之后的状态*/
+                top: 0,
+                touching: false,
+                loading: false,
+                refresh: false
+            }
         },
-        offset: {                    /*刷新块高度*/
-          type: Number,
-          default: 44
-        }
-      },
-      data() {
-        return {
-          startY: 0,
-          state: 0,    /*0：正常状态，1：确定要刷新数据，处touchmove状态，2：上拉刷新touchend之后的状态*/
-          top: 0,
-          touching: false,
-          loading: false,
-          refresh: false
-        }
-      },
-      methods: {
+        methods: {
            /*对上拉刷新数据效果进行处理，onTouchStart，onTouchMove，onTouchEnd*/
-        onTouchStart(e) {
-          this.startY = e.targetTouches[0].pageY
-          this.touching = true
-        },
-        onTouchMove(e) {
-          if (this.$el.scrollTop > 0 || !this.touching || this.onRefresh === undefined) {
-            return
-          }
-          let diff = e.targetTouches[0].pageY - this.startY
-          if (diff > 0)e.preventDefault()
-          this.top = Math.pow(diff, 0.8) + (this.state === 2 ? this.offset : 0)
-          if (this.state === 2) {
-            return
-          }
-          if (this.top > this.offset) {
-            this.state = 1
-          } else {
-            this.state = 0
-          }
-        },
-        onTouchEnd (e) {
-          let _$ = this
-          this.touching = false
-          if (this.top >= this.offset) {
-            this.state = 2
-            this.top = this.offset
-            _$.onRefresh(() => {
-              _$.state = 0
-              _$.top = 0
-            })
-          } else {
-            this.state = 0
-            this.top = 0
-          }
-        },
+            onTouchStart(e) {
+                this.startY = e.targetTouches[0].pageY
+                this.touching = true
+            },
+            onTouchMove(e) {
+                if (this.$el.scrollTop > 0 || !this.touching || this.onRefresh === undefined) {
+                    return
+                }
+                let diff = e.targetTouches[0].pageY - this.startY
+                if (diff > 0)e.preventDefault()
+                this.top = Math.pow(diff, 0.8) + (this.state === 2 ? this.offset : 0)
+                if (this.state === 2) {
+                    return
+                }
+                if (this.top > this.offset) {
+                    this.state = 1
+                } else {
+                    this.state = 0
+                }
+            },
+            onTouchEnd (e) {
+                let _$ = this
+                this.touching = false
+                if (this.top >= this.offset) {
+                    this.state = 2
+                    this.top = this.offset
+                    _$.onRefresh(() => {
+                        _$.state = 0
+                        _$.top = 0
+                    })
+                } else {
+                    this.state = 0
+                    this.top = 0
+                }
+            },
             /*滚动监听，准备加载数据*/
-        onScroll(e) {
-          if (!this.onLoad) return
-          let [
+            onScroll(e) {
+                if (!this.onLoad) return
+                let [
                     elHeight,
                     innerHeight,
                     elScrollTop,
                     loadDomHeight
                 ] = [
-                  this.$el.clientHeight,
-                  this.$el.querySelector('.vui-scroll-inner').clientHeight,
-                  this.$el.scrollTop,
-                  this.$el.querySelector('.vui-scroll-load').clientHeight
+                    this.$el.clientHeight,
+                    this.$el.querySelector('.vui-scroll-inner').clientHeight,
+                    this.$el.scrollTop,
+                    this.$el.querySelector('.vui-scroll-load').clientHeight
                 ]
 
-          let bottom = innerHeight - elHeight - elScrollTop
+                let bottom = innerHeight - elHeight - elScrollTop
 
-          if (bottom < loadDomHeight) {
-            this.loadMore()
-          }
-        },
+                if (bottom < loadDomHeight) {
+                    this.loadMore()
+                }
+            },
             /*加载数据*/
-        loadMore() {
-          if (this.loading) return
-          this.loading = true
-          this.onLoad(() => {
-            this.loading = false
-          })
-        }
+            loadMore() {
+                if (this.loading) return
+                this.loading = true
+                this.onLoad(() => {
+                    this.loading = false
+                })
+            }
 
-      }
+        }
 
     }
 </script>

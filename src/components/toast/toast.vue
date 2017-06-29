@@ -43,23 +43,23 @@
 <script>
     import Util from '../../util/util'
     export default {
-      props: {
-        text: {
-          type: String
+        props: {
+            text: {
+                type: String
+            },
+            timeout: {
+                type: Number
+            }
         },
-        timeout: {
-          type: Number
+        destroyed() {
+            let util = new Util()
+            util.removeElement('[vui-toast]', 0)
+        },
+        mounted() {
+            this.$el.style.animation = `toast-hide ${this.timeout}ms linear forwards`
+            setTimeout(() => {
+                this.$destroy()
+            }, this.timeout)
         }
-      },
-      destroyed() {
-        let util = new Util()
-        util.removeElement('[vui-toast]', 0)
-      },
-      mounted() {
-        this.$el.style.animation = `toast-hide ${this.timeout}ms linear forwards`
-        setTimeout(() => {
-          this.$destroy()
-        }, this.timeout)
-      }
     }
 </script>

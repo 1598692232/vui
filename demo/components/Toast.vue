@@ -9,10 +9,10 @@
 <script>
     import Toast from '@/components/toast/index'
     export default {
-      methods: {
-        showToast() {
-          Toast.show('mammamamam', 2000)
+        methods: {
+            showToast() {
+                Toast.show('mammamamam', 2000)
+            }
         }
-      }
     }
 </script>

@@ -28,6 +28,8 @@ module.exports = {
     "spaced-comment": 0,
     "no-irregular-whitespace": 1,
     "no-multi-spaces": 0,
+    "no-tabs": 'off',
     "no-multiple-empty-lines": [2, {"max": 2}],
+    "indent": ["error", 4]
   }
 }

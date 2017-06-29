@@ -10,20 +10,20 @@
 <script>
     import $managerModal from '@/components/modal/index.js'
     export default {
-      data() {
-        return {
-          list: [1, 2, 3, 4]
-        }
-      },
-
-      methods: {
-        show() {
+        data() {
+            return {
+                list: [1, 2, 3, 4]
+            }
         },
 
-        hide() {
-          console.log($managerModal.modalVMArgs, 94949)
-          $managerModal.destroy(1)
+        methods: {
+            show() {
+            },
+
+            hide() {
+                console.log($managerModal.modalVMArgs, 94949)
+                $managerModal.destroy(1)
+            }
         }
-      }
     }
 </script>

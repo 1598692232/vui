@@ -8,15 +8,15 @@
 <script>
   import overlay from '@/components/overlay/index.vue'
   export default{
-    data () {
-      return {
-      }
-    },
-    components: {
-      overlay
-    },
-    methods: {
+      data () {
+          return {
+          }
+      },
+      components: {
+          overlay
+      },
+      methods: {
 
-    }
+      }
   }
 </script>

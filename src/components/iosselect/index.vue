@@ -12,124 +12,124 @@
   import channel from './channel'
   Vue.use(VueScroller)
   export default {
-    props: {
-      selectList: {
-        type: Array,
-        default() {
-          return []
-        }
-      },
+      props: {
+          selectList: {
+              type: Array,
+              default() {
+                  return []
+              }
+          },
 
-      valConnect: {
-        type: String,
-        default: '/'
-      },
+          valConnect: {
+              type: String,
+              default: '/'
+          },
 
-      inputStyle: {
-        type: Object,
-        default() {
-          return {width: '100%'}
-        }
-      },
+          inputStyle: {
+              type: Object,
+              default() {
+                  return {width: '100%'}
+              }
+          },
 
-      initVal: {
-        type: Array,
-        default() {
-          return [2, 3, 4, 5]
-        }
-      }
-    },
-
-    data() {
-      return {
-        select: '',
-        setList: false,
-        val: '',
-        util: ''
-      }
-    },
-
-    computed: {
-      selectAll() {
-        return  this.selectList
-      }
-    },
-
-    mounted() {
-      let _$ = this
-      _$.util = new Util()
-      channel.$on('selectok', (val) => {
-        _$.val = ''
-        val.forEach((v, k) => {
-          if (k === val.length - 1) {
-            _$.val += v.text
-          } else {
-            _$.val += v.text + _$.valConnect
+          initVal: {
+              type: Array,
+              default() {
+                  return [2, 3, 4, 5]
+              }
           }
-        })
-        _$.$emit('select:ok', val)
-        this.hideBack()
-      })
+      },
 
-      channel.$on('selectcancel', this.hideBack)
-      channel.$on('loopevent', (val) => {
-        this.$emit('loop:event', val)
-      })
+      data() {
+          return {
+              select: '',
+              setList: false,
+              val: '',
+              util: ''
+          }
+      },
 
-      channel.$on('init', () => {
-        this.$emit('select:init')
-      })
-    },
+      computed: {
+          selectAll() {
+              return  this.selectList
+          }
+      },
 
-    methods: {
-
-      showBack() {
-        $backDesk.show()
-        this.$emit('select:beforeinit')
-        let backdesk = document.querySelector('[vui-backdesk]')
-
-        if (!document.querySelector('[vui-select]')) {
-          this.util.createElement('vui-select')
-        }
-
-        let SelectCom = Vue.extend(iosSelect)
-        this.select = new SelectCom().$mount('[vui-select]')
-        if (!this.setList) {
-          this.selectAll = this.selectAll.map((v, k) => {
-            v.unshift({}, {}, {})
-            v.push({}, {}, {})
-            return v
+      mounted() {
+          let _$ = this
+          _$.util = new Util()
+          channel.$on('selectok', (val) => {
+              _$.val = ''
+              val.forEach((v, k) => {
+                  if (k === val.length - 1) {
+                      _$.val += v.text
+                  } else {
+                      _$.val += v.text + _$.valConnect
+                  }
+              })
+              _$.$emit('select:ok', val)
+              this.hideBack()
           })
-          this.setList = true
-        }
 
-        this.select.$data.selectList = this.selectAll
-        this.select.$data.initVal = this.initVal
-        setTimeout(() => {
-          this.select.initRender()
-        }, 100)
+          channel.$on('selectcancel', this.hideBack)
+          channel.$on('loopevent', (val) => {
+              this.$emit('loop:event', val)
+          })
 
-        backdesk.addEventListener('click', () => {
-          this.hideBack()
-        })
+          channel.$on('init', () => {
+              this.$emit('select:init')
+          })
       },
 
-      hideBack() {
-        $backDesk.hide()
-        this.select !== '' && this.select.$destroy()
-        this.setList = false
-        this.$emit('select:cancel')
-      },
+      methods: {
 
-      listRender(i) {
-        if (this.select === '') {
-          return
-        }
-        this.selectAll[i].unshift({}, {}, {})
-        this.selectAll[i].push({}, {}, {})
-        this.select.$set(this.select.selectList, i, this.selectAll[i])
+          showBack() {
+              $backDesk.show()
+              this.$emit('select:beforeinit')
+              let backdesk = document.querySelector('[vui-backdesk]')
+
+              if (!document.querySelector('[vui-select]')) {
+                  this.util.createElement('vui-select')
+              }
+
+              let SelectCom = Vue.extend(iosSelect)
+              this.select = new SelectCom().$mount('[vui-select]')
+              if (!this.setList) {
+                  this.selectAll = this.selectAll.map((v, k) => {
+                      v.unshift({}, {}, {})
+                      v.push({}, {}, {})
+                      return v
+                  })
+                  this.setList = true
+              }
+
+              this.select.$data.selectList = this.selectAll
+              this.select.$data.initVal = this.initVal
+              setTimeout(() => {
+                  this.select.initRender()
+              }, 100)
+
+              backdesk.addEventListener('click', () => {
+                  this.hideBack()
+              })
+          },
+
+          hideBack() {
+              $backDesk.hide()
+              this.select !== '' && this.select.$destroy()
+              this.setList = false
+              this.$emit('select:cancel')
+          },
+
+          listRender(i) {
+              if (this.select === '') {
+                  return
+              }
+              this.selectAll[i].unshift({}, {}, {})
+              this.selectAll[i].push({}, {}, {})
+              this.select.$set(this.select.selectList, i, this.selectAll[i])
+          }
+
       }
-
-    }
   }
 </script>

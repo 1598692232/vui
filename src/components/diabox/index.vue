@@ -37,32 +37,32 @@
 <script>
   import overlay from '../overlay/index.vue'
   export default {
-    props: {
-      title: {
-        type: String,
-        default: 'title'
+      props: {
+          title: {
+              type: String,
+              default: 'title'
+          },
+          content: {
+              type: String,
+              default: 'content'
+          },
+          did: {
+              type: String,
+              require: true
+          }
       },
-      content: {
-        type: String,
-        default: 'content'
+      components: {
+          overlay
       },
-      did: {
-        type: String,
-        require: true
+      data () {
+          return {
+          }
+      },
+      methods: {
+          dialogSure () {
+              this.$emit('sure')
+              this.$emit('overhide')
+          }
       }
-    },
-    components: {
-      overlay
-    },
-    data () {
-      return {
-      }
-    },
-    methods: {
-      dialogSure () {
-        this.$emit('sure')
-        this.$emit('overhide')
-      }
-    }
   }
 </script>

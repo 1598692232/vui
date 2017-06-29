@@ -105,101 +105,101 @@
 
   const LINE_HEIGHT = 35
   export default {
-    data() {
-      return {
-        val: [],
-        timer: '',
-        selectList: [],
-        width: '',
+      data() {
+          return {
+              val: [],
+              timer: '',
+              selectList: [],
+              width: '',
 //        show: false,
-        initVal: []
-      }
-    },
-
-    beforeDestroy() {
-      clearInterval(this.timer)
-    },
-
-    destroyed() {
-      this.$el.querySelector('.vui-select').style.animation = 'iosselect-hide 300ms cubic-bezier(0.23, 1, 0.32, 1) 0ms forwards'
-      setTimeout(() => {
-        let util = new Util()
-        util.removeElement('[vui-select]', 200)
-      }, 300)
-    },
-
-    watch: {
-      selectList: function(val) {
-        this.width = 100 / val.length
-      }
-    },
-
-    mounted() {
-      channel.$emit('init')
-    },
-
-    methods: {
-      initRender() {
-        let _$ = this
-        _$.initScrollTop()
-        clearInterval(this.timer)
-        _$.timer = setInterval(() => {
-          _$.updateSelect()
-          channel.$emit('loopevent', _$.val)
-        }, 50)
-      },
-
-      initScrollTop() {
-        let _$ = this
-        _$.selectList.forEach((v, k) => {
-          let $select = _$.$refs['select' + k][0]
-          let active = 0
-          for (let i in v) {
-            if (v[i].value !== undefined && v[i].value === _$.initVal[k]) {
-              active = i
-              break
-            }
+              initVal: []
           }
-          $select.scrollTo(0, LINE_HEIGHT * (active - 3), true)
-        })
       },
+
+      beforeDestroy() {
+          clearInterval(this.timer)
+      },
+
+      destroyed() {
+          this.$el.querySelector('.vui-select').style.animation = 'iosselect-hide 300ms cubic-bezier(0.23, 1, 0.32, 1) 0ms forwards'
+          setTimeout(() => {
+              let util = new Util()
+              util.removeElement('[vui-select]', 200)
+          }, 300)
+      },
+
+      watch: {
+          selectList: function(val) {
+              this.width = 100 / val.length
+          }
+      },
+
+      mounted() {
+          channel.$emit('init')
+      },
+
+      methods: {
+          initRender() {
+              let _$ = this
+              _$.initScrollTop()
+              clearInterval(this.timer)
+              _$.timer = setInterval(() => {
+                  _$.updateSelect()
+                  channel.$emit('loopevent', _$.val)
+              }, 50)
+          },
+
+          initScrollTop() {
+              let _$ = this
+              _$.selectList.forEach((v, k) => {
+                  let $select = _$.$refs['select' + k][0]
+                  let active = 0
+                  for (let i in v) {
+                      if (v[i].value !== undefined && v[i].value === _$.initVal[k]) {
+                          active = i
+                          break
+                      }
+                  }
+                  $select.scrollTo(0, LINE_HEIGHT * (active - 3), true)
+              })
+          },
 
       /* 循环监听设置top */
-      updateSelect() {
-        let _$ = this
-        _$.selectList.forEach((v, k) => {
-          let $select = _$.$refs['select' + k][0]
-          let active =  parseInt($select.getPosition().top / LINE_HEIGHT) + 3
-          _$.handleActiveStyle($select.$el, active)
-          _$.val[k] = _$.selectList[k][active]
-        })
-      },
+          updateSelect() {
+              let _$ = this
+              _$.selectList.forEach((v, k) => {
+                  let $select = _$.$refs['select' + k][0]
+                  let active =  parseInt($select.getPosition().top / LINE_HEIGHT) + 3
+                  _$.handleActiveStyle($select.$el, active)
+                  _$.val[k] = _$.selectList[k][active]
+              })
+          },
 
       /* 处理样式 */
-      handleActiveStyle(el, index) {
-        let $item = el.querySelectorAll('.vui-select-item')
+          handleActiveStyle(el, index) {
+              let $item = el.querySelectorAll('.vui-select-item')
 
-        for (let i = 0; i < $item.length; i++) {
-          if (i === index) {
-            $item[i].style.opacity = 1
-          } else if (Math.abs(index - i) === 1) {
-            $item[i].style.opacity = 0.4
-          } else if (Math.abs(index - i) === 2) {
-            $item[i].style.opacity = 0.2
-          } else {
-            $item[i].style.opacity = 0.1
+              for (let i = 0; i < $item.length; i++) {
+                  if (i === index) {
+                      $item[i].style.opacity = 1
+                  } else if (Math.abs(index - i) === 1) {
+                      $item[i].style.opacity = 0.4
+                  } else if (Math.abs(index - i) === 2) {
+                      $item[i].style.opacity = 0.2
+                  } else {
+                      $item[i].style.opacity = 0.1
+                  }
+              }
+          },
+
+          sureVal() {
+              channel.$emit('selectok', this.val)
+          },
+
+          cancelVal() {
+              channel.$emit('selectcancel')
           }
-        }
-      },
 
-      sureVal() {
-        channel.$emit('selectok', this.val)
-      },
-
-      cancelVal() {
-        channel.$emit('selectcancel')
       }
-
-    }
   }
 </script>

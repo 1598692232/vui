@@ -40,35 +40,35 @@
 <script>
   import channel from './channel.js'
   export default {
-    props: {
-      oid: {
-        type: String,
-        require: true
-      }
-    },
-    data () {
-      return {
-        hide: true
-      }
-    },
-    mounted () {
-      var _$ = this
-      channel.$on('overshow.' + this.oid, (id) => {
-        _$.hide = false
-      })
-      channel.$on('overhide.' + this.oid, (id) => {
-        _$.hide = true
-      })
-    },
-    methods: {
-      clickHideOverlay (e) {
-        if (e.target.nodeName === 'DIV' && e.target.className === 'over-body-table') {
-          this.hide = true
-        }
+      props: {
+          oid: {
+              type: String,
+              require: true
+          }
       },
-      hideOverlay () {
-        this.hide = true
+      data () {
+          return {
+              hide: true
+          }
+      },
+      mounted () {
+          var _$ = this
+          channel.$on('overshow.' + this.oid, (id) => {
+              _$.hide = false
+          })
+          channel.$on('overhide.' + this.oid, (id) => {
+              _$.hide = true
+          })
+      },
+      methods: {
+          clickHideOverlay (e) {
+              if (e.target.nodeName === 'DIV' && e.target.className === 'over-body-table') {
+                  this.hide = true
+              }
+          },
+          hideOverlay () {
+              this.hide = true
+          }
       }
-    }
   }
 </script>

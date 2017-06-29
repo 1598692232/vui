@@ -3,11 +3,11 @@
  */
 import ActionController from './actionController'
 export default {
-  bind(el, binding) {
-    el.addEventListener('click', () => {
-      let ac = new ActionController()
-      let bv = binding.value
-      ac.show(bv)
-    }, false)
-  }
+    bind(el, binding) {
+        el.addEventListener('click', () => {
+            let ac = new ActionController()
+            let bv = binding.value
+            ac.show(bv)
+        }, false)
+    }
 }

@@ -29,13 +29,13 @@ Vue.component('Scroll', Scroll)
 Vue.directive('dropdown', Dropdown)
 
 export default {
-  Swiper,
-  Backdesk,
-  Actions,
-  Datepicker,
-  Diabox,
-  IosSelect,
-  Ranger,
-  Scroll,
-  Dropdown
+    Swiper,
+    Backdesk,
+    Actions,
+    Datepicker,
+    Diabox,
+    IosSelect,
+    Ranger,
+    Scroll,
+    Dropdown
 }

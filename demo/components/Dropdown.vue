@@ -24,32 +24,32 @@
 <script>
     import Dropdown from '@/components/dropdown/index.js'
     export default {
-      data() {
-        return {
-          list1: [1, 2, 3, 4],
-          list2: [2, 2, 3, 4],
-          list3: [3, 2, 3, 4],
-          list4: [4, 2, 3, 4]
-        }
-      },
-
-      directives: {
-        Dropdown
-      },
-
-      methods: {
-        dataFormatter(item, index) {
-          console.log('dateformatter')
-          return `<div>${item}${item}${item}${item}${item}${item}${item}</div>`
+        data() {
+            return {
+                list1: [1, 2, 3, 4],
+                list2: [2, 2, 3, 4],
+                list3: [3, 2, 3, 4],
+                list4: [4, 2, 3, 4]
+            }
         },
 
-        dropClick(item, index) {
-          console.log(item, index, '66666')
+        directives: {
+            Dropdown
         },
 
-        render() {
-          console.log('已经render了')
+        methods: {
+            dataFormatter(item, index) {
+                console.log('dateformatter')
+                return `<div>${item}${item}${item}${item}${item}${item}${item}</div>`
+            },
+
+            dropClick(item, index) {
+                console.log(item, index, '66666')
+            },
+
+            render() {
+                console.log('已经render了')
+            }
         }
-      }
     }
 </script>

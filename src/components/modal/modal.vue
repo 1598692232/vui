@@ -178,50 +178,50 @@
 <script>
     import ModalCache from './modalCache'
     export default {
-      props: {
-        title: {
-          type: String,
-          default: 'title'
+        props: {
+            title: {
+                type: String,
+                default: 'title'
+            },
+            theme: {
+                type: String,
+                default: '#fff'
+            },
+            onHide: {
+                type: Function
+            },
+            render: {
+                type: Function
+            },
+            direction: {
+                type: String,
+                default: 'bottom'
+            }
         },
-        theme: {
-          type: String,
-          default: '#fff'
-        },
-        onHide: {
-          type: Function
-        },
-        render: {
-          type: Function
-        },
-        direction: {
-          type: String,
-          default: 'bottom'
-        }
-      },
 
-      mounted() {
-        this.render && this.render()
-      },
+        mounted() {
+            this.render && this.render()
+        },
 
-      data() {
-        return {
-          close: false,
-          index: 0
-        }
-      },
+        data() {
+            return {
+                close: false,
+                index: 0
+            }
+        },
 
-      methods: {
+        methods: {
         /* remove防止二次删除 */
-        hide(remove) {
-          let _$ = this
-          _$.close = true
-          _$.$forceUpdate()
-          _$.$el.addEventListener('animationend', () => {
-            document.body.removeChild(_$.$el)
-            _$.onHide && _$.onHide()
-          })
-          remove && ModalCache.remove(_$.index)
+            hide(remove) {
+                let _$ = this
+                _$.close = true
+                _$.$forceUpdate()
+                _$.$el.addEventListener('animationend', () => {
+                    document.body.removeChild(_$.$el)
+                    _$.onHide && _$.onHide()
+                })
+                remove && ModalCache.remove(_$.index)
+            }
         }
-      }
     }
 </script>

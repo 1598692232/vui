@@ -125,163 +125,163 @@
   import draggable from '../draggable'
   import _ from '../helper'
 export default {
-    props: {
-      range: {
-        type: Array,
-        default () {
-          return [0, 1000]
-        }
+      props: {
+          range: {
+              type: Array,
+              default () {
+                  return [0, 1000]
+              }
+          },
+          val: {
+              type: [Number, Array],
+              default () {
+                  return [0, 1000]
+              }
+          },
+          sliderNum: {
+              type: Number,
+              validator (val) {
+                  return val === 2 ? 2 : 1
+              },
+              default: 1
+          },
+          valShow: {
+              type: Boolean,
+              default: true
+          }
       },
-      val: {
-        type: [Number, Array],
-        default () {
-          return [0, 1000]
-        }
+      data () {
+          return {
+              drag2$: {
+                  transX: 0
+              },
+              drag1$: {
+                  transX: 0
+              },
+              clientMaxWidth: 0,
+              setting: false,
+              rangerNumber: 0
+          }
       },
-      sliderNum: {
-        type: Number,
-        validator (val) {
-          return val === 2 ? 2 : 1
-        },
-        default: 1
+      computed: {
+          value () {
+              return (typeof this.val) === 'number' || ((typeof this.val) === 'object' && this.val.length === 1) ? [0, this.val] : this.val
+          }
       },
-      valShow: {
-        type: Boolean,
-        default: true
-      }
-    },
-    data () {
-      return {
-        drag2$: {
-          transX: 0
-        },
-        drag1$: {
-          transX: 0
-        },
-        clientMaxWidth: 0,
-        setting: false,
-        rangerNumber: 0
-      }
-    },
-    computed: {
-      value () {
-        return (typeof this.val) === 'number' || ((typeof this.val) === 'object' && this.val.length === 1) ? [0, this.val] : this.val
-      }
-    },
-    mounted () {
-      this.rangerNumber = this.range[1] - this.range[0]
-      this._initRanger()
-      this.$forceUpdate()
-    },
-    directives: {
-      draggable
-    },
-    watch: {
-      val (val) {
-        this.jsToSetVal()
-      }
-    },
-    methods: {
+      mounted () {
+          this.rangerNumber = this.range[1] - this.range[0]
+          this._initRanger()
+          this.$forceUpdate()
+      },
+      directives: {
+          draggable
+      },
+      watch: {
+          val (val) {
+              this.jsToSetVal()
+          }
+      },
+      methods: {
       /*判断value,是否正确*/
-      _valueToCorrect () {
-        this.value[1] = Math.min(Math.max(this.value[0], this.value[1]), this.range[1])
-        this.value[0] = Math.max(Math.min(this.value[0], this.value[1]), this.range[0])
-      },
+          _valueToCorrect () {
+              this.value[1] = Math.min(Math.max(this.value[0], this.value[1]), this.range[1])
+              this.value[0] = Math.max(Math.min(this.value[0], this.value[1]), this.range[0])
+          },
 
       /* 初始化处理 */
-      _initRanger () {
-        let rbDom = this.$refs.ranger_body
-        this.clientMaxWidth = rbDom.offsetWidth
-        this._setValue()
-        this.$forceUpdate()
-      },
+          _initRanger () {
+              let rbDom = this.$refs.ranger_body
+              this.clientMaxWidth = rbDom.offsetWidth
+              this._setValue()
+              this.$forceUpdate()
+          },
 
-      _setValue () {
-        this._valueToCorrect()
-        this._handleSetDrag2()
-        if (this.sliderNum === 2) {
-          this._handleSetDrag1()
-        }
-      },
+          _setValue () {
+              this._valueToCorrect()
+              this._handleSetDrag2()
+              if (this.sliderNum === 2) {
+                  this._handleSetDrag1()
+              }
+          },
 
-      _handleSetDrag2 () {
-        this.drag2$.transX =  this.clientMaxWidth * ((this.range[1] - this.value[1]) / this.rangerNumber)
-        _.css(this.$refs.drag2, 'transform', 'translate3d(-' + this.drag2$.transX + 'px,0,0)')
-        _.css(this.$refs.cover2, 'width', this.clientMaxWidth * (( this.range[1] - this.value[1]) / this.rangerNumber) + 'px')
-      },
+          _handleSetDrag2 () {
+              this.drag2$.transX =  this.clientMaxWidth * ((this.range[1] - this.value[1]) / this.rangerNumber)
+              _.css(this.$refs.drag2, 'transform', 'translate3d(-' + this.drag2$.transX + 'px,0,0)')
+              _.css(this.$refs.cover2, 'width', this.clientMaxWidth * (( this.range[1] - this.value[1]) / this.rangerNumber) + 'px')
+          },
 
-      _handleSetDrag1 () {
-        let vr = this.val[0] - this.range[0]
-        this.drag1$.transX = this.clientMaxWidth * (vr / this.rangerNumber)
-        _.css(this.$refs.drag1, 'transform', 'translate3d(' + this.drag1$.transX + 'px,0,0)')
-        _.css(this.$refs.cover1, 'width', this.clientMaxWidth * (vr / this.rangerNumber) + 'px')
-      },
+          _handleSetDrag1 () {
+              let vr = this.val[0] - this.range[0]
+              this.drag1$.transX = this.clientMaxWidth * (vr / this.rangerNumber)
+              _.css(this.$refs.drag1, 'transform', 'translate3d(' + this.drag1$.transX + 'px,0,0)')
+              _.css(this.$refs.cover1, 'width', this.clientMaxWidth * (vr / this.rangerNumber) + 'px')
+          },
 
       /*拖动进行时*/
-      onDraging (e) {
-        e.target.className === 'vui-drag1' ? this._setDrag1AndCover1(e) : this._setDrag2AndCover2(e)
-        this._setVal(e)
-      },
-      _setDrag1AndCover1 (e) {
-        if (this.sliderNum !== 2) return
+          onDraging (e) {
+              e.target.className === 'vui-drag1' ? this._setDrag1AndCover1(e) : this._setDrag2AndCover2(e)
+              this._setVal(e)
+          },
+          _setDrag1AndCover1 (e) {
+              if (this.sliderNum !== 2) return
 
-        let $drag1 = this.$refs.drag1
-        _.css(this.$refs.cover1, 'width',  Math.abs(e.data.x) + 'px')
+              let $drag1 = this.$refs.drag1
+              _.css(this.$refs.cover1, 'width',  Math.abs(e.data.x) + 'px')
 
-        if (e.data.x <= 0) {
-          _.css($drag1, 'transform', 'translate3d(0,0,0)')
-          _.css(this.$refs.cover1, 'width', 0)
-        }
+              if (e.data.x <= 0) {
+                  _.css($drag1, 'transform', 'translate3d(0,0,0)')
+                  _.css(this.$refs.cover1, 'width', 0)
+              }
 
-        if (this.clientMaxWidth - Math.abs(e.data.x) - Math.abs(this.drag2$.transX) <= 0) {
-          _.css(this.$refs.cover1, 'width', this.clientMaxWidth - Math.abs(this.drag2$.transX))
-          _.css($drag1, 'transform', 'translate3d(' + parseFloat(this.clientMaxWidth - Math.abs(this.drag2$.transX)) + 'px,0,0)')
-        }
-      },
-      _setDrag2AndCover2 (e) {
-        let $drag2 = this.$refs.drag2
-        _.css(this.$refs.cover2, 'width', Math.abs(e.data.x) + 'px')
+              if (this.clientMaxWidth - Math.abs(e.data.x) - Math.abs(this.drag2$.transX) <= 0) {
+                  _.css(this.$refs.cover1, 'width', this.clientMaxWidth - Math.abs(this.drag2$.transX))
+                  _.css($drag1, 'transform', 'translate3d(' + parseFloat(this.clientMaxWidth - Math.abs(this.drag2$.transX)) + 'px,0,0)')
+              }
+          },
+          _setDrag2AndCover2 (e) {
+              let $drag2 = this.$refs.drag2
+              _.css(this.$refs.cover2, 'width', Math.abs(e.data.x) + 'px')
 
-        if (e.data.x >= 0) {
-          _.css($drag2, 'transform', 'translate3d(0,0,0)')
-          _.css(this.$refs.cover2, 'width', 0)
-        }
+              if (e.data.x >= 0) {
+                  _.css($drag2, 'transform', 'translate3d(0,0,0)')
+                  _.css(this.$refs.cover2, 'width', 0)
+              }
 
-        if (this.clientMaxWidth - Math.abs(e.data.x) - Math.abs(this.drag1$.transX) <= 0) {
-          _.css(this.$refs.cover2, 'width', this.clientMaxWidth - Math.abs(this.drag1$.transX))
-          _.css($drag2, 'transform', 'translate3d(-' + parseFloat(this.clientMaxWidth - Math.abs(this.drag1$.transX)) + 'px,0,0)')
-        }
-      },
-      _setVal (e) {
-        e.target.className === 'vui-drag2'
+              if (this.clientMaxWidth - Math.abs(e.data.x) - Math.abs(this.drag1$.transX) <= 0) {
+                  _.css(this.$refs.cover2, 'width', this.clientMaxWidth - Math.abs(this.drag1$.transX))
+                  _.css($drag2, 'transform', 'translate3d(-' + parseFloat(this.clientMaxWidth - Math.abs(this.drag1$.transX)) + 'px,0,0)')
+              }
+          },
+          _setVal (e) {
+              e.target.className === 'vui-drag2'
         ? this.value[1] = this.rangerNumber * ((this.clientMaxWidth - this.$refs.cover2.offsetWidth) / this.clientMaxWidth) + this.range[0]
           : this.value[0] = this.$refs.cover1.offsetWidth / this.clientMaxWidth * this.rangerNumber + this.range[0]
-        this.$emit('updating', this.sliderNum === 1 ? this.value[1] : this.value, e)
-        this.$forceUpdate()
-      },
+              this.$emit('updating', this.sliderNum === 1 ? this.value[1] : this.value, e)
+              this.$forceUpdate()
+          },
       /*  拖动结束 */
-      onDragEnd (e) {
-        e.target.className === 'vui-drag1' ?  this.drag1$.transX = e.data.x : this.drag2$.transX = e.data.x
-        _.css(this.$refs.drag2, 'z-index', '1')
-        if (this.sliderNum === 2) {
-          _.css(this.$refs.drag1, 'z-index', '1')
-        }
-        if (e.target.className === 'vui-drag1' && e.data.x >= this.clientMaxWidth) {
-          _.css(this.$refs.drag1, 'z-index', '10')
-        }
-        if (e.target.className === 'vui-drag2' && e.data.x <= -this.clientMaxWidth && this.sliderNum === 2) {
-          _.css(this.$refs.drag2, 'z-index', '10')
-        }
-      },
+          onDragEnd (e) {
+              e.target.className === 'vui-drag1' ?  this.drag1$.transX = e.data.x : this.drag2$.transX = e.data.x
+              _.css(this.$refs.drag2, 'z-index', '1')
+              if (this.sliderNum === 2) {
+                  _.css(this.$refs.drag1, 'z-index', '1')
+              }
+              if (e.target.className === 'vui-drag1' && e.data.x >= this.clientMaxWidth) {
+                  _.css(this.$refs.drag1, 'z-index', '10')
+              }
+              if (e.target.className === 'vui-drag2' && e.data.x <= -this.clientMaxWidth && this.sliderNum === 2) {
+                  _.css(this.$refs.drag2, 'z-index', '10')
+              }
+          },
       /* 手动设置值 */
-      jsToSetVal () {
-        let self = this
-        self._setValue()
-        self.setting = true
-        self.$el.addEventListener('transitionend', (e) => {
-          self.setting = false
-        })
+          jsToSetVal () {
+              let self = this
+              self._setValue()
+              self.setting = true
+              self.$el.addEventListener('transitionend', (e) => {
+                  self.setting = false
+              })
+          }
       }
-    }
   }
 </script>

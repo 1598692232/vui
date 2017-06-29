@@ -7,35 +7,35 @@ import Util from '@/util/util'
 import action from './actions'
 
 export default class ActionController {
-  constructor() {
-    this._util = new Util()
-    this._vm = null
-  }
-
-  show(bv) {
-    $backDesk.show()
-    let backdesk = document.querySelector('[vui-backdesk]')
-
-    if (!document.querySelector('[vui-action]')) {
-      this._util.createElement('vui-action')
+    constructor() {
+        this._util = new Util()
+        this._vm = null
     }
 
-    let Action = Vue.extend(action)
+    show(bv) {
+        $backDesk.show()
+        let backdesk = document.querySelector('[vui-backdesk]')
 
-    this._vm = new Action({
-      propsData: {
-        actions: bv.actionList || [],
-        actionEvent: bv.actionEvent || null
-      }
-    }).$mount('[vui-action]')
+        if (!document.querySelector('[vui-action]')) {
+            this._util.createElement('vui-action')
+        }
 
-    backdesk.addEventListener('click', () => {
-      this.hide()
-    }, false)
-  }
+        let Action = Vue.extend(action)
 
-  hide() {
-    $backDesk.hide()
-    this._vm.$destroy()
-  }
+        this._vm = new Action({
+            propsData: {
+                actions: bv.actionList || [],
+                actionEvent: bv.actionEvent || null
+            }
+        }).$mount('[vui-action]')
+
+        backdesk.addEventListener('click', () => {
+            this.hide()
+        }, false)
+    }
+
+    hide() {
+        $backDesk.hide()
+        this._vm.$destroy()
+    }
 }

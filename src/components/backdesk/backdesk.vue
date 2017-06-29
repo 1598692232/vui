@@ -36,41 +36,41 @@
   const duration = 200
 
   export default{
-    data() {
-      return {
-        state: 0,
-        util: ''
-      }
-    },
-
-    mounted() {
-      this.util = new Util()
-    },
-
-    destroyed() {
-      this.$el.querySelector('.vui-back').style.animation = 'backdesk-hide 0.3s cubic-bezier(0.23, 1, 0.32, 1) 0ms forwards'
-      setTimeout(() => {
-        this.util.removeElement('[vui-backdesk]')
-      }, 300)
-    },
-
-    methods: {
-      show (allowTouchMove) {
-        !allowTouchMove && document.body.addEventListener('touchmove', (e) => {
-          e.preventDefault()
-        })
-
-        this.state = 1
+      data() {
+          return {
+              state: 0,
+              util: ''
+          }
       },
 
-      hide (allowTouchMove) {
-        allowTouchMove && document.body.removeEventListener('touchmove', (e) => {
-          e.preventDefault()
-        })
+      mounted() {
+          this.util = new Util()
+      },
 
-        this.state = 0
-        return this.util.timeout(duration)
+      destroyed() {
+          this.$el.querySelector('.vui-back').style.animation = 'backdesk-hide 0.3s cubic-bezier(0.23, 1, 0.32, 1) 0ms forwards'
+          setTimeout(() => {
+              this.util.removeElement('[vui-backdesk]')
+          }, 300)
+      },
+
+      methods: {
+          show (allowTouchMove) {
+              !allowTouchMove && document.body.addEventListener('touchmove', (e) => {
+                  e.preventDefault()
+              })
+
+              this.state = 1
+          },
+
+          hide (allowTouchMove) {
+              allowTouchMove && document.body.removeEventListener('touchmove', (e) => {
+                  e.preventDefault()
+              })
+
+              this.state = 0
+              return this.util.timeout(duration)
+          }
       }
-    }
   }
 </script>

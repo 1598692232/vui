@@ -46,33 +46,33 @@
     import Util from '../../util/util'
     import $backDesk from '../backdesk/index'
     export default {
-      props: {
-        actions: {
-          type: Array,
-          require: true
-        },
-        actionEvent: {
-          type: Function
-        }
-      },
-
-      destroyed() {
-        this.$el.querySelector('.action-body').style.animation = 'action-hide 0.3s cubic-bezier(0.23, 1, 0.32, 1) forwards'
-        setTimeout(() => {
-          let util = new Util()
-          util.removeElement('[vui-action]', 200)
-        }, 350)
-      },
-
-      methods: {
-        actionClick(item, index) {
-          this.actionEvent(item, index)
+        props: {
+            actions: {
+                type: Array,
+                require: true
+            },
+            actionEvent: {
+                type: Function
+            }
         },
 
-        cancel() {
-          this.$destroy()
-          $backDesk.hide()
+        destroyed() {
+            this.$el.querySelector('.action-body').style.animation = 'action-hide 0.3s cubic-bezier(0.23, 1, 0.32, 1) forwards'
+            setTimeout(() => {
+                let util = new Util()
+                util.removeElement('[vui-action]', 200)
+            }, 350)
+        },
+
+        methods: {
+            actionClick(item, index) {
+                this.actionEvent(item, index)
+            },
+
+            cancel() {
+                this.$destroy()
+                $backDesk.hide()
+            }
         }
-      }
     }
 </script>

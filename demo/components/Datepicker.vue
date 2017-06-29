@@ -10,17 +10,17 @@
 import datepicker from '@/components/datepicker/index.vue'
 
 export default {
-  components: {
-    datepicker
-  },
-  methods: {
-    selectOk(val) {
-      console.log(val, 92929)
+    components: {
+        datepicker
     },
+    methods: {
+        selectOk(val) {
+            console.log(val, 92929)
+        },
 
-    selectCancel() {
-      console.log(11111)
+        selectCancel() {
+            console.log(11111)
+        }
     }
-  }
 }
 </script>

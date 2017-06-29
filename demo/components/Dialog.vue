@@ -12,20 +12,20 @@
 <script>
   import Diabox from '../../src/components/diabox/index.vue'
   export default{
-    data () {
-      return {
-        did: 'dialog-131123',
-        did2: 'dialog-131124'
+      data () {
+          return {
+              did: 'dialog-131123',
+              did2: 'dialog-131124'
+          }
+      },
+      components: {
+          Diabox
+      },
+      methods: {
+          clickSure () {
+              console.log('232222')
+          }
       }
-    },
-    components: {
-      Diabox
-    },
-    methods: {
-      clickSure () {
-        console.log('232222')
-      }
-    }
 
   }
 </script>

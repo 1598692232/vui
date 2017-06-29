@@ -13,15 +13,15 @@
 <script>
   import iosSelect from '@/components/iosselect/index'
   export default{
-    data () {
-      return {
-        acts: [
+      data () {
+          return {
+              acts: [
           {id: 0, value: 0, callback: (a, b, c) => { console.log(a, b); c() }},
           {id: 1, value: 1, callback: (a, b) => { console.log(a, b) }},
           {id: 2, value: 2, callback: (a, b) => { console.log(a, b) }},
           {id: 3, value: 3, callback: (a, b) => { console.log(a, b) }}
-        ],
-        selectAll: [[
+              ],
+              selectAll: [[
           {value: 1, text: 1},
           {value: 2, text: 2},
           {value: 3, text: 3},
@@ -38,7 +38,7 @@
           {value: 14, text: 14},
           {value: 15, text: 15}
 
-        ], [
+              ], [
           {value: 1, text: 1},
           {value: 2, text: 2},
           {value: 3, text: 3},
@@ -54,7 +54,7 @@
           {value: 13, text: 13},
           {value: 14, text: 14},
           {value: 15, text: 15}
-        ], [
+              ], [
           {value: 1, text: 1},
           {value: 2, text: 2},
           {value: 3, text: 3},
@@ -70,7 +70,7 @@
           {value: 13, text: 13},
           {value: 14, text: 14},
           {value: 15, text: 15}
-        ], [
+              ], [
           {value: 1, text: 1},
           {value: 2, text: 2},
           {value: 3, text: 3},
@@ -86,8 +86,8 @@
           {value: 13, text: 13},
           {value: 14, text: 14},
           {value: 15, text: 15}
-        ]],
-        selectAll2: [[
+              ]],
+              selectAll2: [[
           {value: 1, text: 1},
           {value: 2, text: 2},
           {value: 3, text: 3},
@@ -108,7 +108,7 @@
           {value: 18, text: 18},
           {value: 19, text: 19},
           {value: 20, text: 20}
-        ], [
+              ], [
           {value: 1, text: 1},
           {value: 2, text: 2},
           {value: 3, text: 3},
@@ -129,7 +129,7 @@
           {value: 18, text: 18},
           {value: 19, text: 19},
           {value: 20, text: 20}
-        ], [
+              ], [
           {value: 1, text: 1},
           {value: 2, text: 2},
           {value: 3, text: 3},
@@ -150,7 +150,7 @@
           {value: 18, text: 18},
           {value: 19, text: 19},
           {value: 20, text: 20}
-        ], [
+              ], [
           {value: 1, text: 1},
           {value: 2, text: 2},
           {value: 3, text: 3},
@@ -171,16 +171,16 @@
           {value: 18, text: 18},
           {value: 19, text: 19},
           {value: 20, text: 20}
-        ]]
-      }
-    },
-    components: {
-      iosSelect
-    },
-    mounted() {
-      let _$ = this
-      setTimeout(() => {
-        _$.selectAll[2] = [
+              ]]
+          }
+      },
+      components: {
+          iosSelect
+      },
+      mounted() {
+          let _$ = this
+          setTimeout(() => {
+              _$.selectAll[2] = [
           {value: 1, text: 1},
           {value: 2, text: 2},
           {value: 3, text: 3},
@@ -191,14 +191,14 @@
           {value: 8, text: 8},
           {value: 9, text: 9},
           {value: 10, text: 10}
-        ]
-        this.$refs.iosselect.listRender(2)
-      }, 3000)
-    },
-    methods: {
-      getValue(val) {
+              ]
+              this.$refs.iosselect.listRender(2)
+          }, 3000)
+      },
+      methods: {
+          getValue(val) {
 //        console.log(val)
+          }
       }
-    }
   }
 </script>

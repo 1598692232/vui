@@ -5,8 +5,8 @@ import router from './router/index'
 Vue.config.productionTip = false
 
 export default new Vue({
-  el: '#app',
-  router,
-  template: '<App/>',
-  components: { App }
+    el: '#app',
+    router,
+    template: '<App/>',
+    components: { App }
 })
