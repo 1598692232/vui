@@ -20,6 +20,7 @@
     min-height: 200px;
     overflow: hidden;
     position: relative;
+    font-size:0.13rem;
   }
   .vui-swiper ul{
     position:absolute;

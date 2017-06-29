@@ -42,6 +42,7 @@
         height:100%;
         overflow-x:hidden ;
         overflow-y: auto;
+        font-size: .13rem;
     }
     .vui-scroll-inner{
         position: absolute;

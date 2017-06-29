@@ -28,6 +28,7 @@
     width: 100%;
     background: #f5f5f5;
     z-index:2;
+    font-size:0.13rem;
     /*transition:all 300ms cubic-bezier(0.23, 1, 0.32, 1) 0ms*/
     animation:iosselect-show 300ms cubic-bezier(0.23, 1, 0.32, 1) 0ms forwards;
   }

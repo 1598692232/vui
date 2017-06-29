@@ -35,6 +35,7 @@
 <style>
   .vui-ranger {
     position: relative;
+    font-size: 0.13rem;
   }
 
   .vui-ranger .vui-ranger-value {

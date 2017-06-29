@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div vui-components>
         <header class="title">Components</header>
         <div class="wrap-box wrap-6">
             <div class="com-body"  v-for="(item,i) in components">
@@ -16,14 +16,24 @@
             return {
                 components: [
                     [
-                        {label: 'com1', url: ''},
-                        {label: 'com2', url: ''},
-                        {label: 'com3', url: ''}
+                        {label: 'action', url: '#/action'},
+                        {label: 'iosselect', url: '#/iosselect'},
+                        {label: 'datepicker', url: '#/datepicker'}
                     ],
                     [
-                        {label: 'com1', url: ''},
-                        {label: 'com2', url: ''},
-                        {label: 'com3', url: ''}
+                        {label: 'modal', url: '#/modal'},
+                        {label: 'swiper', url: '#/swiper'},
+                        {label: 'toast', url: '#/toast'}
+                    ],
+                    [
+                        {label: 'ranger', url: '#/ranger'},
+                        {label: 'scroll', url: '#/scroll'},
+                        {label: 'dropdown', url: '#/dropdown'}
+                    ],
+                    [
+                        {label: 'diabox', url: '#/diabox'},
+                        {label: '', url: 'javascript:;'},
+                        {label: '', url: 'javascript:;'}
                     ]
                 ]
             }
@@ -31,6 +41,9 @@
     }
 </script>
 <style lang="less">
+    [vui-components]{
+        font-size:0.13rem;
+    }
     .title{
         font-size:0.15rem;
         font-weight:bold;
@@ -43,6 +56,14 @@
             flex: 1;
             height: 1.25rem;
             background: #f5f5f5;
+            border:1px solid #fff;
+            a{
+                display: inline-block;
+                width:100%;
+                text-align: center;
+                line-height: 1.25rem;
+                text-decoration: none;
+            }
         }
     }
 </style>

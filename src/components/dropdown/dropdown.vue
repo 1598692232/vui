@@ -14,6 +14,7 @@
         box-shadow: 0 0 1px #666;
         padding:10px;
         border-radius: 3px;
+        font-size:.13rem;
         animation:fade 0.3s cubic-bezier(0.23, 1, 0.32, 1) forwards ;
         -webkit-animation:fade 0.3s cubic-bezier(0.23, 1, 0.32, 1) forwards ;
     }

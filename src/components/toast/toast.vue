@@ -8,6 +8,9 @@
     </div>
 </template>
 <style lang="less">
+[vui-toast]{
+    font-size:0.13rem
+}
 .vui-toast-bg{
     display: table;
     position:fixed;

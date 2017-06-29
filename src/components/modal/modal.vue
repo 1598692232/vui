@@ -30,6 +30,7 @@
         width:100%;
         height:100%;
         background: #a9a9a9;
+        font-size:0.13rem;
     }
     .vui-modal-bottom-enter{
         animation:slide-bottom-enter 0.3s cubic-bezier(0.23, 1, 0.32, 1) forwards;

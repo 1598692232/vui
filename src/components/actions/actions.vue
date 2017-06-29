@@ -13,6 +13,9 @@
     </div>
 </template>
 <style>
+    [vui-action]{
+        font-size: 0.13rem
+    }
     .action-body{
         width:100%;
         position: fixed;

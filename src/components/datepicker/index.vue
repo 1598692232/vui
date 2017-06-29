@@ -1,11 +1,13 @@
 <template>
-  <div>
+  <div vui-datepicker>
     <ios-select name="" id="" :select-list="dateList" ref="datepicker" @loop:event="setDay" :init-val="initDate" :input-style="inputStyle"
                 @select:cancel="cancelDate" @select:ok="sureDate" @select:beforeinit="init"></ios-select>
   </div>
 </template>
 <style>
-
+  [vui-iosselect]{
+    font-size: 0.13rem;
+  }
 </style>
 <script>
   import iosSelect from '../iosselect/index'
