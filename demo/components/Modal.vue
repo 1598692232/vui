@@ -1,5 +1,6 @@
 <template>
     <div>
+        <head-top title="Modal" left-url="#/"></head-top>
         <button  style="display: inline-block;float: left;margin:0 20px;" @click="show()">弹出modal</button>
     </div>
 </template>
@@ -9,12 +10,17 @@
 <script>
     import $managerModal from '@/components/modal/index.js'
     import MutileModal from './MutileModal'
+    import headTop from './header'
     export default {
         data() {
             return {
                 list: [1, 2, 3, 4],
                 modal: null
             }
+        },
+
+        components: {
+            headTop
         },
 
         created () {

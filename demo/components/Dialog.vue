@@ -1,5 +1,6 @@
 <template>
   <div class="demo">
+    <head-top title="Dialog" left-url="#/"></head-top>
     <button v-overlay.id="did">modal</button>
     <Diabox title="this is title" content="this is content" @sure="clickSure" :did="did">
       <p slot="title">这里才是真正的title</p>
@@ -11,6 +12,7 @@
 </template>
 <script>
   import Diabox from '../../src/components/diabox/index.vue'
+  import headTop from './header'
   export default{
       data () {
           return {
@@ -19,7 +21,8 @@
           }
       },
       components: {
-          Diabox
+          Diabox,
+          headTop
       },
       methods: {
           clickSure () {

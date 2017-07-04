@@ -1,5 +1,6 @@
 <template>
     <div>
+        <head-top title="Dropdown" left-url="#/"></head-top>
         <div style="height:50px;"></div>
         <button v-dropdown="{dropList:list1,dataFormatter:dataFormatter,dropClick:dropClick,render:render}" style="display: inline-block;float: left;margin:0 20px;">adasd</button>
         <div style="height:550px;"></div>
@@ -23,6 +24,7 @@
 </style>
 <script>
     import Dropdown from '@/components/dropdown/index.js'
+    import headTop from './header'
     export default {
         data() {
             return {
@@ -35,6 +37,10 @@
 
         directives: {
             Dropdown
+        },
+
+        components: {
+            headTop
         },
 
         methods: {

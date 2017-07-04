@@ -2,6 +2,7 @@
 <template>
     <div id="app">
         <div class="scroll-demo">
+            <head-top title="Ranger" left-url="#/"></head-top>
             <scroll :on-refresh="refresh" :on-load="loadData">
                 <div slot="refresh">上拉刷新</div>
                 <ul class="list">
@@ -15,6 +16,7 @@
 
 <script>
   import scroll from '@/components/scroll/index.vue'
+  import headTop from './header'
   export default {
     //        name: 'app',
       data() {
@@ -30,7 +32,8 @@
       },
 
       components: {
-          scroll
+          scroll,
+          headTop
       },
       methods: {
           refresh(done) {

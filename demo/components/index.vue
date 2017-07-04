@@ -48,6 +48,7 @@
         font-size:0.15rem;
         font-weight:bold;
         margin-bottom:0.15rem;
+        line-height: 0.44rem;
     }
     .com-body{
         display: flex;

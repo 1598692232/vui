@@ -1,5 +1,6 @@
 <template>
   <div class="demo">
+    <head-top title="Ranger" left-url="#/"></head-top>
     <Swiper :data="data" :auto="false" :delay="1000" :slider-shift="100" :speed="0.5" ref="swiper"
             @ontouchstart="touchstart" @ontouchmove="touchmove" @ontouchend="touchend" @renderend="renderend" @renderstart="renderstart">
       <template scope="props">
@@ -10,6 +11,7 @@
 </template>
 <script>
 import Swiper from '@/components/swiper/index'
+import headTop from './header'
 export default{
     data () {
         return {
@@ -24,7 +26,8 @@ export default{
         }
     },
     components: {
-        Swiper
+        Swiper,
+        headTop
     },
 
     mounted() {

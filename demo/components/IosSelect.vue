@@ -1,6 +1,7 @@
 
 <template>
   <div class="demo">
+    <head-top title="Iosselect" left-url="#/"></head-top>
     <div style="margin-bottom:30px;">
       <ios-select name="" id="" :select-list="selectAll" ref="iosselect" @loop:event="getValue"></ios-select>
     </div>
@@ -12,6 +13,7 @@
 </template>
 <script>
   import iosSelect from '@/components/iosselect/index'
+  import headTop from './header'
   export default{
       data () {
           return {
@@ -175,7 +177,8 @@
           }
       },
       components: {
-          iosSelect
+          iosSelect,
+          headTop
       },
       mounted() {
           let _$ = this

@@ -1,5 +1,6 @@
 <template>
   <div>
+    <head-top title="Datepicker" left-url="#/"></head-top>
     <datepicker @select:ok="selectOk" @select:cancel="selectCancel"></datepicker>
   </div>
 </template>
@@ -8,10 +9,12 @@
 </style>
 <script>
 import datepicker from '@/components/datepicker/index.vue'
+import headTop from './header'
 
 export default {
     components: {
-        datepicker
+        datepicker,
+        headTop
     },
     methods: {
         selectOk(val) {
