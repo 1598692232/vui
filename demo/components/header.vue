@@ -7,7 +7,7 @@
         </a>
         <p class="title">{{ title }}</p>
         <a :href="rightUrl" @click="rightCallback" class="right">
-            <slot name="right">操作</slot>
+            <slot name="right"></slot>
         </a>
     </header>
 </template>

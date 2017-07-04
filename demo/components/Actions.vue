@@ -1,8 +1,7 @@
 <template>
   <div>
     <head-top title="Actions" left-url="#/"></head-top>
-    <button v-action="{actionList:acts, actionEvent:actionClick}">action</button>
-    <button v-action="{actionList:acts2, actionEvent:actionClick}">action2</button>
+    <button v-action="{actionList:acts, actionEvent: actionClick}">显示action</button>
   </div>
 </template>
 <script>
@@ -20,7 +19,7 @@
       data () {
           return {
               acts: [
-          {id: 0, value: 0},
+          {id: 0, value: 0, template: '<span>0000</span>'},
           {id: 1, value: 1},
           {id: 2, value: 2},
           {id: 3, value: 3}

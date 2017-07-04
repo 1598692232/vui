@@ -18,7 +18,7 @@ export default class ActionController {
 
         if (!document.querySelector('[vui-action]')) {
             this._util.createElement('vui-action')
-        }
+        } else return
 
         let Action = Vue.extend(action)
 
