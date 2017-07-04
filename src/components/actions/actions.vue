@@ -31,7 +31,8 @@
         .action-list li{
             line-height: 0.44rem;
             text-align: center;
-            border-bottom:1px solid #ddd
+            border-bottom:1px solid #ddd;
+            font-size:0.15rem
         }
         .action-list li:last-of-type{
             border-bottom: 0;
@@ -42,6 +43,8 @@
             text-align: center;
             line-height:0.44rem;
             background: #fff;
+            color:#007aff;
+            font-size: 0.15rem
         }
         @keyframes action-show{
             0%{

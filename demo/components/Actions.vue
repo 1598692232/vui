@@ -19,10 +19,10 @@
       data () {
           return {
               acts: [
-          {id: 0, value: 0, template: '<span>0000</span>'},
-          {id: 1, value: 1},
-          {id: 2, value: 2},
-          {id: 3, value: 3}
+          {id: 0, value: 0, template: '<span style="color:#007aff">action0</span>'},
+          {id: 1, value: 1, template: '<span style="color:#007aff">action1</span>'},
+          {id: 2, value: 2, template: '<span style="color:#007aff">action2</span>'},
+          {id: 3, value: 3, template: '<span style="color:#007aff">action3</span>'}
               ],
               acts2: [
           {id: 4, value: 4},

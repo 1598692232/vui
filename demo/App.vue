@@ -47,7 +47,7 @@
     position: absolute;
     width:100%;
     height:100%;
-    transition: all .5s cubic-bezier(.55, 0, .1, 1);
+    transition: all .5s cubic-bezier(0.23, 1, 0.32, 1);
   }
 
   .slide-left-enter, .slide-right-leave-active{
