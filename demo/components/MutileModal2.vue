@@ -1,6 +1,5 @@
 <template>
     <div>
-        <button @click="show()">modal2</button>
         <button @click="hide()">close</button>
     </div>
 </template>
@@ -17,8 +16,6 @@
         },
 
         methods: {
-            show() {
-            },
 
             hide() {
                 console.log($managerModal.modalVMArgs, 94949)
