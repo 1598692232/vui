@@ -12,6 +12,7 @@ import Ranger from '../components/Ranger'
 import Dropdown from '../components/Dropdown'
 import Modal from '../components/Modal'
 import Toast from '../components/Toast'
+import Radio from '../components/Radio'
 
 import VueScroller from 'vue-scroller'
 
@@ -74,6 +75,11 @@ export default new Router({
             path: '/toast',
             name: 'Toast',
             component: Toast
+        },
+        {
+            path: '/radio',
+            name: 'Radio',
+            component: Radio
         }
     ]
 })
