@@ -140,7 +140,7 @@ export default {
               }
           },
           sliderNum: {
-              type: Number,
+              type: [Number, String],
               validator (val) {
                   return val === 2 ? 2 : 1
               },
@@ -149,6 +149,10 @@ export default {
           valShow: {
               type: Boolean,
               default: true
+          },
+
+          maxWidth: {
+          	type: [String, Number]
           }
       },
       data () {
@@ -192,7 +196,7 @@ export default {
       /* 初始化处理 */
           _initRanger () {
               let rbDom = this.$refs.ranger_body
-              this.clientMaxWidth = rbDom.offsetWidth
+              this.clientMaxWidth = parseInt(this.maxWidth) || rbDom.offsetWidth
               this._setValue()
               this.$forceUpdate()
           },
@@ -200,7 +204,7 @@ export default {
           _setValue () {
               this._valueToCorrect()
               this._handleSetDrag2()
-              if (this.sliderNum === 2) {
+              if (parseInt(this.sliderNum) === 2) {
                   this._handleSetDrag1()
               }
           },
@@ -223,8 +227,9 @@ export default {
               e.target.className === 'vui-drag1' ? this._setDrag1AndCover1(e) : this._setDrag2AndCover2(e)
               this._setVal(e)
           },
+
           _setDrag1AndCover1 (e) {
-              if (this.sliderNum !== 2) return
+              if (parseInt(this.sliderNum) !== 2) return
 
               let $drag1 = this.$refs.drag1
               _.css(this.$refs.cover1, 'width',  Math.abs(e.data.x) + 'px')
@@ -239,6 +244,7 @@ export default {
                   _.css($drag1, 'transform', 'translate3d(' + parseFloat(this.clientMaxWidth - Math.abs(this.drag2$.transX)) + 'px,0,0)')
               }
           },
+
           _setDrag2AndCover2 (e) {
               let $drag2 = this.$refs.drag2
               _.css(this.$refs.cover2, 'width', Math.abs(e.data.x) + 'px')
@@ -253,18 +259,20 @@ export default {
                   _.css($drag2, 'transform', 'translate3d(-' + parseFloat(this.clientMaxWidth - Math.abs(this.drag1$.transX)) + 'px,0,0)')
               }
           },
+
           _setVal (e) {
               e.target.className === 'vui-drag2'
         ? this.value[1] = this.rangerNumber * ((this.clientMaxWidth - this.$refs.cover2.offsetWidth) / this.clientMaxWidth) + this.range[0]
           : this.value[0] = this.$refs.cover1.offsetWidth / this.clientMaxWidth * this.rangerNumber + this.range[0]
-              this.$emit('updating', this.sliderNum === 1 ? this.value[1] : this.value, e)
+              this.$emit('updating', parseInt(this.sliderNum) === 1 ? this.value[1] : this.value, e)
               this.$forceUpdate()
           },
-      /*  拖动结束 */
+
+          /* 拖动结束 */
           onDragEnd (e) {
               e.target.className === 'vui-drag1' ?  this.drag1$.transX = e.data.x : this.drag2$.transX = e.data.x
               _.css(this.$refs.drag2, 'z-index', '1')
-              if (this.sliderNum === 2) {
+              if (parseInt(this.sliderNum) === 2) {
                   _.css(this.$refs.drag1, 'z-index', '1')
               }
               if (e.target.className === 'vui-drag1' && e.data.x >= this.clientMaxWidth) {
@@ -274,7 +282,7 @@ export default {
                   _.css(this.$refs.drag2, 'z-index', '10')
               }
           },
-      /* 手动设置值 */
+          /* 手动设置值 */
           jsToSetVal () {
               let self = this
               self._setValue()
