@@ -1,7 +1,7 @@
 <template>
     <div>
         <head-top title="Radio" left-url="#/"></head-top>
-        <radio-tag :tags="tags"></radio-tag>
+        <checkbox-tag :tags="tags"></checkbox-tag>
     </div>
 </template>
 
@@ -11,7 +11,7 @@
 
 <script>
 import headTop from './header'
-import RadioTag from '@/components/radiotag'
+import CheckboxTag from '@/components/radiocheckboxtag'
 
 export default {
     data () {
@@ -28,7 +28,7 @@ export default {
     },
 
     components: {
-        RadioTag,
+        CheckboxTag,
         headTop
     }
 }

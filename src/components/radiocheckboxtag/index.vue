@@ -56,6 +56,7 @@ export default {
                 margin-right: 0.1rem;
                 border-radius: 0.15rem;
                 color:#666;
+                margin-bottom: 0.1rem;
                 &.active{
                     background: #0a9dc7;
                     color:#fff;
