@@ -30,6 +30,7 @@ module.exports = {
     "no-multi-spaces": 0,
     "no-tabs": 'off',
     "no-multiple-empty-lines": [2, {"max": 2}],
-    "indent": ["error", 4]
+    "indent": ["error", 4],
+    "no-mixed-spaces-and-tabs": [0, false],
   }
 }

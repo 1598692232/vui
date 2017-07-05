@@ -2,7 +2,7 @@
  * Created by EX-pengzhiliang001 on 2017-05-26.
  **/
 import Util from '../../util/util'
-export default class Drop {
+export default class DropController {
     constructor (component, el, pos = {}, options ) {
         this._component = component
         this._vm = null

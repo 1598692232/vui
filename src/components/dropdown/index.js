@@ -1,5 +1,5 @@
 import dropdown from './dropdown'
-import Drop from './drop'
+import Drop from './dropController'
 export default {
     bind (el, binding, vnode) {
         let drop = null

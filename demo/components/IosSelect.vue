@@ -195,7 +195,9 @@
           {value: 9, text: 9},
           {value: 10, text: 10}
               ]
-              this.$refs.iosselect.listRender(2)
+              if (this.$refs.iosselect !== undefined) {
+              	this.$refs.iosselect.listRender(2)
+              }
           }, 3000)
       },
       methods: {

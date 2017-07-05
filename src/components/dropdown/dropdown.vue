@@ -7,12 +7,14 @@
     </div>
 </template>
 
-<style>
+<style lang="less">
+
+
     .vui-dropdown{
         position: fixed;
         background: #fff;
         box-shadow: 0 0 1px #666;
-        padding:10px;
+        padding:0.1rem;
         border-radius: 3px;
         font-size:.13rem;
         animation:fade 0.3s cubic-bezier(0.23, 1, 0.32, 1) forwards ;
@@ -20,6 +22,8 @@
     }
     .vui-dropdown li{
         list-style: none;
+        line-height:0.3rem;
+        font-size: 0.13rem
     }
     @keyframes fade {
         0% {
