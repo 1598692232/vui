@@ -6,7 +6,7 @@
         </div>
 
         <div style="margin-top:20px">
-            <ranger :slider-num="2" :val="val" :range="[500,10000]"></ranger>
+            <ranger :slider-num="2" :val="val" :range="[500,10000]" ref="r2"></ranger>
         </div>
     </div>
 </template>
@@ -24,8 +24,14 @@
             Ranger,
             headTop
         },
+        mounted() {
+            setTimeout(() => {
+                this.val = [1000, 2000]
+            }, 1000)
+        },
         methods: {
             updating() {
+
             }
         }
     }
