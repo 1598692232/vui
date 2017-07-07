@@ -17,6 +17,9 @@
     height:0.44rem;
     line-height: 0.44rem;
     background: #f9f9f9;
+    position: fixed;
+    z-index:1;
+    width:100%;
     .title{
         float: left;
         width: 80%;
