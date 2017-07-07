@@ -1,7 +1,9 @@
 <template>
     <div>
         <head-top title="Radio" left-url="#/"></head-top>
-        <checkbox-tag :tags="tags" @error="handleSelect" :max-number="3"></checkbox-tag>
+        <div style="padding:0 0.15rem">
+            <checkbox-tag :tags="tags" @error="handleSelect" :max-number="3"></checkbox-tag>
+        </div>
     </div>
 </template>
 
