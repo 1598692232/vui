@@ -120,29 +120,17 @@
                 this.touching = true
             },
             onTouchMove(e) {
-//                console.log(this.$el.scrollTop, !this.touching,  this.onRefresh)
-
-
-                if (this.$el.scrollTop > 0 || !this.touching || this.onRefresh === undefined) {
-                    if (this.state === 0) {
-                        let diff = e.targetTouches[0].pageY - this.startY
-                        this.top = -(Math.pow(Math.abs(diff), 0.8) + this.offset)
-                    }
-                    return
-                }
                 let diff = e.targetTouches[0].pageY - this.startY
                 if (diff > 0)e.preventDefault()
                 this.top = Math.pow(diff, 0.8) + (this.state === 2 ? this.offset : 0)
-                console.log(this.top, 7667)
+
                 if (this.state === 2) {
                     return
                 }
-                console.log(123)
+
                 if (this.top > this.offset) {
-                    console.log(234)
                     this.state = 1
                 } else {
-                    console.log(345)
                     this.startY = e.targetTouches[0].pageY
                     this.state = 0
                 }

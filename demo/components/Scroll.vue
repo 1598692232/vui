@@ -2,7 +2,7 @@
 <template>
     <div id="app">
         <div class="scroll-demo">
-            <head-top title="Ranger" left-url="#/"></head-top>
+            <head-top title="Scroller" left-url="#/"></head-top>
             <scroll :on-refresh="refresh" :on-load="loadData">
                 <div slot="refresh">上拉刷新</div>
                 <ul class="list">
