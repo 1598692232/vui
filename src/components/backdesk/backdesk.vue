@@ -10,6 +10,7 @@
     height:100%;
     left:0;
     top:0;
+    z-index:1;
     background: rgba(0,0,0,0.5);
     animation: backdesk-show 0.3s cubic-bezier(0.23, 1, 0.32, 1) 0ms forwards;
   }

@@ -1,17 +1,16 @@
 <template>
     <div>
         <head-top title="Dropdown" left-url="#/"></head-top>
-        <div style="margin-top:100px;">
-            <div style="height:50px;"></div>
-            <button v-dropdown="{dropList:list1,dataFormatter:dataFormatter,dropClick:dropClick,render:render}" style="display: inline-block;float: left;margin:0 20px;">drop1</button>
-            <div style="height:550px;"></div>
-            <button v-dropdown="{dropList:list2,dataFormatter:dataFormatter,dropClick:dropClick,render:render}" style="display: inline-block;float: right;margin:0 20px;">drop2</button>
-            <div style="height:200px;"></div>
-            <button v-dropdown="{dropList:list3,dataFormatter:dataFormatter,dropClick:dropClick,render:render}" style="display: inline-block;float: left;margin:0 20px;">drop3</button>
-            <div style="height:50px;"></div>
-            <button v-dropdown="{dropList:list4,dataFormatter:dataFormatter,dropClick:dropClick,render:render}" style="display: inline-block;float: left;margin:0 20px;">drop4</button>
-        </div>
 
+            <div>
+                <button v-dropdown="{dropList:list1,dataFormatter:dataFormatter,dropClick:dropClick,render:render}" style="display: block;margin:0 20px;">drop1</button>
+                <div style="height:250px;"></div>
+                <button v-dropdown="{dropList:list2,dataFormatter:dataFormatter,dropClick:dropClick,render:render}" style="display: block;margin:0 20px;">drop2</button>
+                <div style="height:500px;"></div>
+                <button v-dropdown="{dropList:list3,dataFormatter:dataFormatter,dropClick:dropClick,render:render}" style="display: block;margin:0 20px;">drop3</button>
+                <button v-dropdown="{dropList:list4,dataFormatter:dataFormatter,dropClick:dropClick,render:render}" style="display: block;margin:0 20px;">drop4</button>
+                    <div style="clear: both;height:0"></div>
+            </div>
     </div>
 </template>
 <style>
@@ -24,6 +23,7 @@
 <script>
     import Dropdown from '@/components/dropdown/index.js'
     import headTop from './header'
+
     export default {
         data() {
             return {

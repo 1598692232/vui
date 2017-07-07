@@ -3,7 +3,6 @@
   <div class="demo">
     <head-top title="Iosselect" left-url="#/"></head-top>
     <div style="position: relative;margin-top:0.64rem;height:300px;">
-      <scroller>
         <div style="height:1000px;">
           <div style="margin-bottom:30px;">
             <ios-select name="" id="" :select-list="selectAll" ref="iosselect" @loop:event="getValue"></ios-select>
@@ -13,19 +12,15 @@
             <ios-select name="" id="" :select-list="selectAll2" ref="iosselect1" @loop:event="getValue" :initVal="[4,5,6,7]"></ios-select>
           </div>
         </div>
-      </scroller>
     </div>
 
 
   </div>
 </template>
 <script>
-  import Vue from 'vue'
   import iosSelect from '@/components/iosselect/index'
-  import VueScroller from 'vue-scroller'
   import headTop from './header'
 
-  Vue.use(VueScroller)
   export default{
       data () {
           return {

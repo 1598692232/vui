@@ -1,17 +1,17 @@
 <template>
   <div>
     <head-top title="Datepicker" left-url="#/"></head-top>
-    <div style="margin-top:100px;">
-      <datepicker @select:ok="selectOk" @select:cancel="selectCancel"></datepicker>
-    </div>
+        <datepicker @select:ok="selectOk" @select:cancel="selectCancel"></datepicker>
   </div>
 </template>
 <style>
 
 </style>
 <script>
+
 import datepicker from '@/components/datepicker/index.vue'
 import headTop from './header'
+
 
 export default {
     components: {

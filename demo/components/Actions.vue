@@ -1,12 +1,14 @@
 <template>
   <div>
     <head-top title="Actions" left-url="#/"></head-top>
-    <button v-action="{actionList:acts, actionEvent: actionClick}">显示action</button>
+      <button v-action="{actionList:acts, actionEvent: actionClick}">显示action</button>
   </div>
 </template>
 <script>
+
   import action from '@/components/actions'
   import headTop from './header'
+
   export default{
       directives: {
           action
