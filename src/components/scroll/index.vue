@@ -71,7 +71,6 @@
         background-color: #00C853;
     }
     .vui-refreshing .vui-scroll-inner{
-
     }
     .vui-pull-down .vui-scroll-load{
         display: block;
@@ -114,24 +113,24 @@
             }
         },
         methods: {
-           /*对上拉刷新数据效果进行处理，onTouchStart，onTouchMove，onTouchEnd*/
+            /*对上拉刷新数据效果进行处理，onTouchStart，onTouchMove，onTouchEnd*/
             onTouchStart(e) {
                 this.startY = e.targetTouches[0].pageY
                 this.touching = true
             },
             onTouchMove(e) {
+                if (this.$el.scrollTop > 0 || !this.touching || this.onRefresh === undefined) {
+                    return
+                }
                 let diff = e.targetTouches[0].pageY - this.startY
                 if (diff > 0)e.preventDefault()
                 this.top = Math.pow(diff, 0.8) + (this.state === 2 ? this.offset : 0)
-
                 if (this.state === 2) {
                     return
                 }
-
                 if (this.top > this.offset) {
                     this.state = 1
                 } else {
-                    this.startY = e.targetTouches[0].pageY
                     this.state = 0
                 }
             },
@@ -164,9 +163,7 @@
                     this.$el.scrollTop,
                     this.$el.querySelector('.vui-scroll-load').clientHeight
                 ]
-
                 let bottom = innerHeight - elHeight - elScrollTop
-
                 if (bottom < loadDomHeight) {
                     this.loadMore()
                 }
@@ -179,8 +176,6 @@
                     this.loading = false
                 })
             }
-
         }
-
     }
 </script>
