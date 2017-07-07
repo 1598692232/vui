@@ -3,9 +3,9 @@
         <ul class="radio-list">
             <li
                 v-for="(item, i) in tags"
-                v-html="item.template || item.value"
+                v-html="item.template || item.label"
                 @click="tagSelect(i)"
-                :class="{'active':item.selected}"
+                :class="[item.selected ? 'active':'']"
             ></li>
         </ul>
     </div>
@@ -16,29 +16,68 @@ export default {
         tags: {
             type: Array,
             default: []
+        },
+
+        maxNumber: {
+            type: Number,
+            default: 1
         }
     },
 
     data () {
-        return {}
+        return {
+            selectedCount: 0,
+            selectedTags: []
+        }
     },
 
     mounted() {
-        this.initTags()
+        this.initRender()
     },
 
     methods: {
-        /*数据初始化处理*/
-        initTags() {
-            this.tags.map((v, k) => {
-                v.selected = false
+        /*初始化被选中的tag*/
+        initRender() {
+            this.tags.forEach((v, k) => {
+                if (v.selected) {
+                    this.selectedTags.push(v)
+                }
             })
         },
 
         /*radio选择*/
         tagSelect(i) {
-            this.tags[i].selected = true
-            console.log(this.tags[i], 777)
+            if (this.selectedTags.length === this.maxNumber && !this.tags[i].selected) {
+                this.$emit('error', {currentTag: this.tags[i], selectedTags: this.selectedTags, tags: this.tags})
+                return
+            }
+
+            if (!this.tags[i].selected) {
+                this.tags[i].selected = true
+                this.selectedCount++
+                this.selectedTags.push(this.tags[i])
+            } else {
+                this.tags[i].selected = false
+                this.selectedCount--
+                this.selectedTags.forEach((v, k) => {
+                    if (v.value === this.tags[i].value) {
+                        this.selectedTags.splice(k, 1)
+                    }
+                })
+            }
+
+            this.setTag(i)
+            this.$emit('toggle',  {currentTag: this.tags[i], selectedTags: this.selectedTags, tags: this.tags})
+        },
+
+        /*渲染tag*/
+        setTag (i) {
+            let o = {}
+            for (let k in this.tags[i]) {
+                o[k] = this.tags[i][k]
+            }
+
+            this.$set(this.tags, i, o)
         }
     }
 }
