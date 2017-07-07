@@ -1,7 +1,9 @@
 <template>
   <div>
     <head-top title="Datepicker" left-url="#/"></head-top>
-    <datepicker @select:ok="selectOk" @select:cancel="selectCancel"></datepicker>
+    <div style="margin-top:100px;">
+      <datepicker @select:ok="selectOk" @select:cancel="selectCancel"></datepicker>
+    </div>
   </div>
 </template>
 <style>

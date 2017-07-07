@@ -3,12 +3,14 @@
     <div id="app">
         <div class="scroll-demo">
             <head-top title="Scroller" left-url="#/"></head-top>
-            <scroll :on-refresh="refresh" :on-load="loadData">
-                <div slot="refresh">上拉刷新</div>
-                <ul class="list">
-                    <li v-for="c in list">{{c}}</li>
-                </ul>
-            </scroll>
+            <div style="margin-top:0.64rem;position: relative;height:6rem;">
+                <scroll :on-refresh="refresh" :on-load="loadData">
+                    <div slot="refresh">上拉刷新</div>
+                    <ul class="list">
+                        <li v-for="c in list">{{c}}</li>
+                    </ul>
+                </scroll>
+            </div>
         </div>
 
     </div>

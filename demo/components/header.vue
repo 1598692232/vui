@@ -18,6 +18,8 @@
     line-height: 0.44rem;
     background: #f9f9f9;
     position: fixed;
+    left:0;
+    top:0;
     z-index:1;
     width:100%;
     .title{

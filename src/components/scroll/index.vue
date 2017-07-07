@@ -33,7 +33,7 @@
         </div>
     </div>
 </template>
-<style scoped>
+<style scoped lang="less">
     .vui-scroll-body{
         position: absolute;
         left:0;

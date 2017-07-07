@@ -1,13 +1,16 @@
 <template>
     <div class="demo">
         <head-top title="Ranger" left-url="#/"></head-top>
-        <div style="margin-top:20px">
-            <ranger @input="updating" :val="val1" :range="[100,1000]"></ranger>
+        <div style="margin-top:100px;">
+            <div style="margin-top:20px">
+                <ranger @input="updating" :val="val1" :range="[100,1000]"></ranger>
+            </div>
+
+            <div style="margin-top:20px">
+                <ranger :slider-num="2" :val="val" :range="[500,10000]" ref="r2"></ranger>
+            </div>
         </div>
 
-        <div style="margin-top:20px">
-            <ranger :slider-num="2" :val="val" :range="[500,10000]" ref="r2"></ranger>
-        </div>
     </div>
 </template>
 <script>
