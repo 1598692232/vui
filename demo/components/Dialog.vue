@@ -2,16 +2,16 @@
   <div class="demo">
     <div style="font-size:12px">
       <head-top title="Dialog" left-url="#/"></head-top>
-      <div style="">
-
+      <div style="margin-top:0.64rem">
+        <button v-overlay.id="did">modal</button>
+        <Diabox title="this is title" content="this is content" @sure="clickSure" :did="did">
+          <p slot="title">这里才是真正的title</p>
+        </Diabox>
+        <button v-overlay.id="did2">modal2</button>
+        <Diabox title="this is title2" content="this is content2" @sure="clickSure" :did="did2">
+        </Diabox>
       </div>
-      <button v-overlay.id="did">modal</button>
-      <Diabox title="this is title" content="this is content" @sure="clickSure" :did="did">
-        <p slot="title">这里才是真正的title</p>
-      </Diabox>
-      <button v-overlay.id="did2">modal2</button>
-      <Diabox title="this is title2" content="this is content2" @sure="clickSure" :did="did2">
-      </Diabox>
+
     </div>
 
   </div>

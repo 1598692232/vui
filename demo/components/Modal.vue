@@ -1,7 +1,9 @@
 <template>
     <div>
         <head-top title="Modal" left-url="#/"></head-top>
-        <button  style="display: inline-block;float: left;margin:0 20px;" @click="show()">弹出modal</button>
+        <div style="margin-top:0.64rem">
+            <button  style="display: inline-block;float: left;margin:0 20px;" @click="show()">弹出modal</button>
+        </div>
     </div>
 </template>
 <style>

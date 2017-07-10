@@ -2,7 +2,7 @@
     <div>
         <head-top title="Dropdown" left-url="#/"></head-top>
 
-            <div>
+            <div style="margin-top: 0.64rem">
                 <button v-dropdown="{dropList:list1,dataFormatter:dataFormatter,dropClick:dropClick,render:render}" style="display: block;margin:0 20px;">drop1</button>
                 <div style="height:250px;"></div>
                 <button v-dropdown="{dropList:list2,dataFormatter:dataFormatter,dropClick:dropClick,render:render}" style="display: block;margin:0 20px;">drop2</button>

@@ -8,31 +8,32 @@
 </template>
 
 <style lang="less">
-
-
-    .vui-dropdown{
-        position: fixed;
-        background: #fff;
-        box-shadow: 0 0 1px #666;
-        padding:0.1rem;
-        border-radius: 3px;
-        font-size:.13rem;
-        animation:fade 0.3s cubic-bezier(0.23, 1, 0.32, 1) forwards ;
-        -webkit-animation:fade 0.3s cubic-bezier(0.23, 1, 0.32, 1) forwards ;
-    }
-    .vui-dropdown li{
-        list-style: none;
-        line-height:0.3rem;
-        font-size: 0.13rem
-    }
-    @keyframes fade {
-        0% {
-            transform: translateY(-20px);
-            opacity: 0;
+    [vui-dropdown]{
+        .vui-dropdown{
+            position: fixed;
+            background: #fff;
+            box-shadow: 0 0 1px #666;
+            padding:0.1rem;
+            border-radius: 3px;
+            font-size:.13rem;
+            z-index:1;
+            animation:fade 0.3s cubic-bezier(0.23, 1, 0.32, 1) forwards ;
+            -webkit-animation:fade 0.3s cubic-bezier(0.23, 1, 0.32, 1) forwards ;
         }
-        100% {
-            transform: translateY(0);
-            opacity: 1;
+        .vui-dropdown li{
+            list-style: none;
+            line-height:0.3rem;
+            font-size: 0.13rem
+        }
+        @keyframes fade {
+            0% {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
     }
 </style>

@@ -1,7 +1,10 @@
 <template>
   <div>
     <head-top title="Datepicker" left-url="#/"></head-top>
-        <datepicker @select:ok="selectOk" @select:cancel="selectCancel"></datepicker>
+        <div style="margin-top: 0.64rem">
+            <datepicker @select:ok="selectOk" @select:cancel="selectCancel"></datepicker>
+        </div>
+
   </div>
 </template>
 <style>
