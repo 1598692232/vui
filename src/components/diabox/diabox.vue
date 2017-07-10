@@ -29,6 +29,8 @@
             padding:10px;
             background: #fff;
             margin:0 auto;
+            box-shadow: 0 0 1px #666;
+            border-radius: 0.05rem;
             animation: diabox-show 0.3s cubic-bezier(0.23, 1, 0.32, 1) 0ms forwards;
             .title{
                 width:100%;
@@ -83,6 +85,7 @@
 
 </style>
 <script>
+
   export default {
       props: {
           title: {
@@ -103,13 +106,17 @@
           onCancel: {
               type: Function,
               default: () => {}
+          },
+
+          backShow: {
+              type: Boolean,
+              default: true
           }
       },
 
       destroyed() {
           this.$el.querySelector('.dialog-body').style.animation = 'diabox-hide 0.3s cubic-bezier(0.23, 1, 0.32, 1) 0ms forwards'
       },
-
 
       methods: {
           _dialogSure () {

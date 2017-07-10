@@ -43,6 +43,7 @@
               Diabox.show({
                   title: '<span>title2</span>',
                   content: '<div>content2 content2 content2 content2 content2 content2</div>',
+                  backShow: false,
                   onSure: () => {
                       console.log('sure2')
                       Diabox.close()

@@ -9,10 +9,12 @@ class DialogController {
     constructor () {
         this._vm = null
         this._util = new Util()
+        this.props = null
     }
 
     show (props) {
-        $backdesk.show()
+        this.props = props
+        this.props.backShow !== false && $backdesk.show()
         if (!document.querySelector('[vui-diabox]')) {
             this._util.createElement('vui-diabox')
         }
@@ -21,7 +23,7 @@ class DialogController {
     }
 
     close () {
-        $backdesk.hide()
+        this.props.backShow !== false && $backdesk.hide()
         this._vm.$destroy()
         this._util.removeElement('[vui-diabox]', 300).then(() => {
             this._vm = null
