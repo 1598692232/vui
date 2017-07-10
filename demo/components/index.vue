@@ -43,27 +43,27 @@
 <style lang="less">
     [vui-components]{
         font-size:0.13rem;
-    }
-    .title{
-        font-size:0.15rem;
-        font-weight:bold;
-        margin-bottom:0.15rem;
-        line-height: 0.44rem;
-    }
-    .com-body{
-        display: flex;
-        .com-li{
-            display:flex;
-            flex: 1;
-            height: 1.25rem;
-            background: #f5f5f5;
-            border:1px solid #fff;
-            a{
-                display: inline-block;
-                width:100%;
-                text-align: center;
-                line-height: 1.25rem;
-                text-decoration: none;
+        .title{
+            font-size:0.15rem;
+            font-weight:bold;
+            margin-bottom:0.15rem;
+            line-height: 0.44rem;
+        }
+        .com-body{
+            display: flex;
+            .com-li{
+                display:flex;
+                flex: 1;
+                height: 1.25rem;
+                background: #f5f5f5;
+                border:1px solid #fff;
+                a{
+                    display: inline-block;
+                    width:100%;
+                    text-align: center;
+                    line-height: 1.25rem;
+                    text-decoration: none;
+                }
             }
         }
     }

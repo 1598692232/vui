@@ -30,9 +30,15 @@ export default class Util {
         })
     }
 
-    createVm(vm) {
-        this._vm = new Vue(vm)
-        this._vm.$mount(this._el)
+    createVm(vm, props, el) {
+        if (!props) {
+            this._vm = new Vue(vm)
+            this._vm.$mount(this._el || el)
+        } else {
+            let Vo = Vue.extend(vm)
+            this._vm = new Vo(props).$mount(this._el || el)
+        }
+
         return this._vm
     }
 }
