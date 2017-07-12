@@ -122,6 +122,6 @@ if (process.env.NODE_ENV === 'production') {
     new webpack.LoaderOptionsPlugin({
       minimize: true
     }),
-	  new ExtractTextPlugin("vui.css")
+	  new ExtractTextPlugin("style.css")
   ])
 }
