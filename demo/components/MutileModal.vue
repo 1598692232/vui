@@ -1,13 +1,9 @@
 <template>
-    <div>
-        <button @click="show()">modal1</button>
-        <button v-dropdown="{dropList:list1,dataFormatter:dataFormatter,dropClick:dropClick,render:render}" style="display: inline-block;float: left;margin:0 20px;">adasd</button>
-        <button @click="hide">close</button>
+    <div style="padding-top:0.2rem;text-align: center">
+        <button @click="show()" class="v-btn">显示modal2</button>
+        <button @click="hide" class="v-btn">Close Modal1</button>
     </div>
 </template>
-<style>
-
-</style>
 <script>
     import $managerModal from '@/components/modal/index.js'
     import MutileModal2 from './MutileModal2'
@@ -27,7 +23,7 @@
             show() {
 //          this.mm = new ManagerModal()
                 $managerModal.createModalParent(MutileModal2, {
-                    title: '这是标题',
+                    title: 'MODAL TWO',
                     direction: 'right'
                 })
             },

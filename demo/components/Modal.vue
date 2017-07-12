@@ -1,14 +1,12 @@
 <template>
     <div>
         <head-top title="Modal" left-url="#/"></head-top>
-        <div style="margin-top:0.64rem">
-            <button  style="display: inline-block;float: left;margin:0 20px;" @click="show()">弹出modal</button>
+        <div style="margin-top:0.64rem;text-align: center;width: 100%">
+            <button @click="show()" class="v-btn">弹出modal</button>
         </div>
     </div>
 </template>
-<style>
 
-</style>
 <script>
     import $managerModal from '@/components/modal/index.js'
     import MutileModal from './MutileModal'
@@ -34,8 +32,8 @@
             show() {
 //          let mm = new ManagerModal()
                 $managerModal.createModalParent(MutileModal, {
-                    title: '这里是标题1',
-                    theme: '#f00',
+                    title: 'MODAL ONE',
+                    theme: '#f5f5f5',
                     render() {
                         console.log('render')
                     },

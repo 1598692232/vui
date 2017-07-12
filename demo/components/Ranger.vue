@@ -1,7 +1,7 @@
 <template>
     <div class="demo">
         <head-top title="Ranger" left-url="#/"></head-top>
-        <div style="margin-top:100px;">
+        <div style="margin-top:100px;padding:0 0.15rem">
             <div style="margin-top:20px">
                 <ranger @input="updating" :val="val1" :range="[100,1000]"></ranger>
             </div>

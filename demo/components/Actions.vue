@@ -4,16 +4,7 @@
       <button v-action="{actionList:acts, actionEvent: actionClick}" class="v-btn">显示action</button>
   </div>
 </template>
-<style>
-  .v-btn{
-    padding:0 0.1rem;
-    line-height: 0.35rem;
-    background: #6281c2;
-    color:#fff;
-    border:0;
-    border-radius:0.175rem;
-  }
-</style>
+
 <script>
 
   import action from '@/components/actions'

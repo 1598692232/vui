@@ -3,13 +3,13 @@
         <head-top title="Dropdown" left-url="#/"></head-top>
 
             <div style="margin-top: 0.64rem">
-                <button v-dropdown="{dropList:list1,dataFormatter:dataFormatter,dropClick:dropClick,render:render}" style="display: block;margin:0 20px;">drop1</button>
+                <button v-dropdown="{dropList:list1,dataFormatter:dataFormatter,dropClick:dropClick,render:render}" class="v-btn" style="display: block;margin:0 20px;">drop1</button>
                 <div style="height:250px;"></div>
-                <button v-dropdown="{dropList:list2,dataFormatter:dataFormatter,dropClick:dropClick,render:render}" style="display: block;margin:0 20px;">drop2</button>
+                <button v-dropdown="{dropList:list2,dataFormatter:dataFormatter,dropClick:dropClick,render:render}" class="v-btn" style="display: block;margin:0 20px;">drop2</button>
                 <div style="height:500px;"></div>
-                <button v-dropdown="{dropList:list3,dataFormatter:dataFormatter,dropClick:dropClick,render:render}" style="display: block;margin:0 20px;">drop3</button>
-                <button v-dropdown="{dropList:list4,dataFormatter:dataFormatter,dropClick:dropClick,render:render}" style="display: block;margin:0 20px;">drop4</button>
-                    <div style="clear: both;height:0"></div>
+                <button v-dropdown="{dropList:list3,dataFormatter:dataFormatter,dropClick:dropClick,render:render}" class="v-btn" style="display: block;margin:0 20px; float: right">drop3</button>
+                <button v-dropdown="{dropList:list4,dataFormatter:dataFormatter,dropClick:dropClick,render:render}" class="v-btn" style="display: block;margin:0 20px;">drop4</button>
+                <div style="clear: both;height:0"></div>
             </div>
     </div>
 </template>

@@ -1,12 +1,11 @@
 <template>
     <div>
-        <head-top title="Ranger" left-url="#/"></head-top>
-        <button @click="showToast">显示toast</button>
+        <head-top title="Toast" left-url="#/"></head-top>
+        <div style="padding-top:0.2rem;text-align: center">
+            <button @click="showToast" class="v-btn">显示toast</button>
+        </div>
     </div>
 </template>
-<style>
-
-</style>
 <script>
     import Toast from '@/components/toast/index'
     import headTop from './header'

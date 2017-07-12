@@ -2,9 +2,9 @@
   <div class="demo">
     <div style="font-size:12px">
       <head-top title="Dialog" left-url="#/"></head-top>
-      <div style="margin-top:0.64rem">
-        <button @click="showModal1">modal</button>
-        <button @click="showModal2">modal2</button>
+      <div style="margin-top:0.64rem;padding-top:0.2rem">
+        <button @click="showModal1" class="v-btn">dialog1</button>
+        <button @click="showModal2" class="v-btn">dialog2</button>
       </div>
 
     </div>

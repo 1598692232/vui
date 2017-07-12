@@ -1,11 +1,9 @@
 <template>
-    <div>
-        <button @click="hide()">close</button>
+    <div style="padding-top:0.2rem;text-align: center">
+        <button @click="hide()" class="v-btn">CLOSE MODAL2</button>
     </div>
 </template>
-<style>
 
-</style>
 <script>
     import $managerModal from '@/components/modal/index.js'
     export default {

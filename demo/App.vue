@@ -50,6 +50,15 @@
     transition: all .5s cubic-bezier(0.23, 1, 0.32, 1);
   }
 
+  .v-btn{
+    padding:0 0.1rem;
+    line-height: 0.35rem;
+    background: #6281c2;
+    color:#fff;
+    border:0;
+    border-radius:0.175rem;
+  }
+
   .slide-left-enter, .slide-right-leave-active{
     opacity: 0;
     -webkit-transform: translate(100%, 0);
