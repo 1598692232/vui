@@ -1,6 +1,6 @@
 <template>
 <div vui-iosselect>
-  <input type="text" placeholder="点击显示select" @click="showBack" v-model="val" :style="inputStyle">
+  <input type="text" placeholder="点击显示select" @click="showBack" v-model="val" :style="inputStyle" readonly>
 </div>
 </template>
 <style>
