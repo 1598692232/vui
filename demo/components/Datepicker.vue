@@ -2,7 +2,7 @@
   <div>
     <head-top title="Datepicker" left-url="#/"></head-top>
         <div style="margin-top: 0.64rem">
-            <datepicker @select:ok="selectOk" @select:cancel="selectCancel"></datepicker>
+            <datepicker @select:ok="selectOk" @select:cancel="selectCancel" :input-style="inputStyle" placeholder="请选择需要的日期"></datepicker>
         </div>
 
   </div>
@@ -17,6 +17,19 @@ import headTop from './header'
 
 
 export default {
+    data() {
+        return {
+            inputStyle: {
+                border: 0,
+                lineHeight: '0.35rem',
+                padding: '0 0.1rem',
+                width: '100%',
+                boxSizing: 'border-box',
+                marginTop: '0.1rem',
+                background: '#f5f5f5'
+            }
+        }
+    },
     components: {
         datepicker,
         headTop

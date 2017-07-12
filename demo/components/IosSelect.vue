@@ -3,18 +3,10 @@
   <div class="demo">
     <head-top title="Iosselect" left-url="#/"></head-top>
     <div style="position: relative;margin-top:0.64rem;height:300px;">
-        <div style="height:1000px;">
-          <div style="margin-bottom:30px;">
-            <ios-select name="" id="" :select-list="selectAll" ref="iosselect" @loop:event="getValue"></ios-select>
-          </div>
-
-          <div style="margin-bottom:30px;">
-            <ios-select name="" id="" :select-list="selectAll2" ref="iosselect1" @loop:event="getValue" :initVal="[4,5,6,7]"></ios-select>
-          </div>
-        </div>
+      <div style="margin-bottom:30px;">
+        <ios-select name="" id="" :select-list="selectAll" ref="iosselect" @loop:event="getValue" placeholder="请选择选项" :inputStyle="inputStyle"></ios-select>
+      </div>
     </div>
-
-
   </div>
 </template>
 <script>
@@ -180,13 +172,24 @@
           {value: 18, text: 18},
           {value: 19, text: 19},
           {value: 20, text: 20}
-              ]]
+              ]],
+              inputStyle: {
+                  border: 0,
+                  lineHeight: '0.35rem',
+                  padding: '0 0.1rem',
+                  width: '100%',
+                  boxSizing: 'border-box',
+                  marginTop: '0.1rem',
+                  background: '#f5f5f5'
+              }
           }
       },
+
       components: {
           iosSelect,
           headTop
       },
+
       mounted() {
           let _$ = this
           setTimeout(() => {

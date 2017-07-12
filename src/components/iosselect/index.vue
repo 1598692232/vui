@@ -1,6 +1,6 @@
 <template>
 <div vui-iosselect>
-  <input type="text" placeholder="点击显示select" @click="showBack" v-model="val" :style="inputStyle" readonly>
+  <input type="text" :placeholder="placeholder" @click="showBack" v-model="val" :style="inputStyle" readonly>
 </div>
 </template>
 <style>
@@ -42,6 +42,11 @@
               default() {
                   return [2, 3, 4, 5]
               }
+          },
+
+          placeholder: {
+              type: String,
+              default: '请选择'
           }
       },
 

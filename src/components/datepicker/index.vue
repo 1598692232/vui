@@ -1,7 +1,7 @@
 <template>
   <div vui-datepicker>
     <ios-select name="" id="" :select-list="dateList" ref="datepicker" @loop:event="setDay" :init-val="initDate" :input-style="inputStyle"
-                @select:cancel="cancelDate" @select:ok="sureDate" @select:beforeinit="init"></ios-select>
+                @select:cancel="cancelDate" @select:ok="sureDate" @select:beforeinit="init" :placeholder="placeholder"></ios-select>
   </div>
 </template>
 <style>
@@ -25,6 +25,11 @@
               default() {
                   return [new Date().getFullYear(), new Date().getMonth() + 1, new Date().getDate()]
               }
+          },
+
+          placeholder: {
+              type: String,
+              default: '请选择日期'
           }
       },
 
