@@ -53,7 +53,7 @@
   .v-btn{
     padding:0 0.1rem;
     line-height: 0.35rem;
-    background: #6281c2;
+    background: #6281C4;
     color:#fff;
     border:0;
     border-radius:0.175rem;
