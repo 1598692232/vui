@@ -19,7 +19,7 @@ export default {
         },
 
         maxNumber: {
-            type: Number,
+            type: [Number, String],
             default: 1
         }
     },
@@ -47,26 +47,39 @@ export default {
 
         /*radio选择*/
         tagSelect(i) {
-            if (this.selectedTags.length === this.maxNumber && !this.tags[i].selected) {
+            if (this.selectedTags.length === parseInt(this.maxNumber) && !this.tags[i].selected && parseInt(this.maxNumber) !== 1) {
                 this.$emit('error', {currentTag: this.tags[i], selectedTags: this.selectedTags, tags: this.tags})
                 return
             }
 
-            if (!this.tags[i].selected) {
-                this.tags[i].selected = true
-                this.selectedCount++
-                this.selectedTags.push(this.tags[i])
+
+            if (parseInt(this.maxNumber) !== 1) {
+                if (!this.tags[i].selected) {
+                    this.tags[i].selected = true
+                    this.selectedCount++
+                    this.selectedTags.push(this.tags[i])
+                } else {
+                    this.tags[i].selected = false
+                    this.selectedCount--
+                    this.selectedTags.forEach((v, k) => {
+                        if (v.value === this.tags[i].value) {
+                            this.selectedTags.splice(k, 1)
+                        }
+                    })
+                }
+
+                this.setTag(i)
             } else {
-                this.tags[i].selected = false
-                this.selectedCount--
-                this.selectedTags.forEach((v, k) => {
-                    if (v.value === this.tags[i].value) {
-                        this.selectedTags.splice(k, 1)
-                    }
+                this.tags.forEach((v, k) => {
+                    v.selected = false
                 })
+
+                this.selectedTags = []
+                this.selectedTags.push(this.tags[i])
+                this.tags[i].selected = true
+                this.setTag(i)
             }
 
-            this.setTag(i)
             this.$emit('toggle',  {currentTag: this.tags[i], selectedTags: this.selectedTags, tags: this.tags})
         },
 
