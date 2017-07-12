@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <!--<img src="./assets/logo.png">-->
     <transition :name="transitionName">
       <router-view class="router"></router-view>
     </transition>
