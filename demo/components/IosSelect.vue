@@ -11,7 +11,6 @@
           <div style="margin-bottom:30px;">
             <ios-select name="" id="" :select-list="selectAll2" ref="iosselect1" @loop:event="getValue" :initVal="[4,5,6,7]"></ios-select>
           </div>
-          asdasdasdasd
         </div>
     </div>
 
