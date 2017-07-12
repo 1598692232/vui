@@ -32,7 +32,7 @@
                     ],
                     [
                         {label: 'diabox', url: '#/diabox'},
-                        {label: 'radio', url: '#/radioandcheckbox'},
+                        {label: 'radioOrCheckbox', url: '#/radioandcheckbox'},
                         {label: '', url: 'javascript:;'}
                     ]
                 ]
