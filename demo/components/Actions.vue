@@ -8,6 +8,7 @@
 <script>
 
   import action from '@/components/actions'
+  import Toast from '@/components/toast/index'
   import headTop from './header'
 
   export default{
@@ -37,7 +38,7 @@
       },
       methods: {
           actionClick(item, index) {
-              console.log(item, index)
+              Toast.show(JSON.stringify(item) + ';' + index, 2000)
           }
       }
   }

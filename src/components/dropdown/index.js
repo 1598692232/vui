@@ -15,7 +15,7 @@ export default {
             drop = new Drop(dropdown, el, position, binding.value)
         })
 
-        let  events = ['click', 'touchmove', 'scroll']
+        let  events = ['click', 'touchmove', 'touchstart', 'scroll']
         events.forEach((v, k) => {
             document.addEventListener(v, removeDropdown)
         })
