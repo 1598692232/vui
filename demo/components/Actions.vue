@@ -37,8 +37,9 @@
           }
       },
       methods: {
-          actionClick(item, index) {
+          actionClick(item, index, hide) {
               Toast.show(JSON.stringify(item) + ';' + index, 2000)
+              hide()
           }
       }
   }

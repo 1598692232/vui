@@ -15,11 +15,12 @@ class DialogController {
     show (props) {
         this.props = props
         this.props.backShow !== false && $backdesk.show()
-        if (!document.querySelector('[vui-diabox]')) {
-            this._util.createElement('vui-diabox')
-        }
+        // if (!document.querySelector('[vui-diabox]')) {
+        this._util.createElement('vui-diabox')
+        // }
 
         this._vm = this._util.createVm(Diabox, {propsData: props}, document.querySelector('[vui-dialog]'))
+        return this
     }
 
     close () {
@@ -29,8 +30,9 @@ class DialogController {
             this._vm = null
             this._util = null
         })
+        return this
     }
 }
 
-export default new DialogController()
+export default DialogController
 

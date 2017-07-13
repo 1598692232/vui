@@ -14,11 +14,12 @@
 <script>
   import Diabox from '@/components/diabox'
   import headTop from './header'
+
   export default{
       data () {
           return {
-              did: 'dialog-131123',
-              did2: 'dialog-131124'
+              m1: null,
+              m2: null
           }
       },
       components: {
@@ -26,32 +27,43 @@
       },
       methods: {
           showModal1 () {
-              Diabox.show({
-                  title: '<span>title1</span>',
-                  content: '<div>content1 content1 content1 content1 content1 content1</div>',
-                  onSure: () => {
-                      console.log('sure1')
-                      Diabox.close()
-                  },
-                  onCancel: () => {
-                      console.log('cancel1')
-                      Diabox.close()
-                  }
+              this.m2 && this.m2.close()
+              this.m2 = null
+              this.$nextTick(() => {
+                  this.m1 = new Diabox().show({
+                      title: '<span>title1</span>',
+                      content: '<div>content1 content1 content1 content1 content1 content1</div>',
+                      onSure: () => {
+                          console.log('sure1')
+                          this.showModal2()
+                      },
+                      onCancel: () => {
+                          console.log('cancel1')
+                          this.m1.close()
+                          this.m1 = null
+                      }
+                  })
               })
           },
+
           showModal2 () {
-              Diabox.show({
-                  title: '<span>title2</span>',
-                  content: '<div>content2 content2 content2 content2 content2 content2</div>',
-                  backShow: false,
-                  onSure: () => {
-                      console.log('sure2')
-                      Diabox.close()
-                  },
-                  onCancel: () => {
-                      console.log('cancel2')
-                      Diabox.close()
-                  }
+              this.m1 && this.m1.close()
+              this.m1 = null
+              this.$nextTick(() => {
+                  this.m2 = new Diabox().show({
+                      title: '<span>title2</span>',
+                      content: '<div>content2 content2 content2 content2 content2 content2</div>',
+                      backShow: false,
+                      onSure: () => {
+                          console.log('sure2')
+                          this.showModal1()
+                      },
+                      onCancel: () => {
+                          console.log('cancel2')
+                          this.m2.close()
+                          this.m2 = null
+                      }
+                  })
               })
           }
       },

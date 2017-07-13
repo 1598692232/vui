@@ -33,11 +33,4 @@ export default class ActionController {
             this.hide()
         }, false)
     }
-
-    hide() {
-        this._vm.$destroy()
-        setTimeout(() => {
-            $backDesk.hide()
-        }, 100)
-    }
 }

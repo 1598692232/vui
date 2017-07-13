@@ -4,7 +4,7 @@
             <ul class="action-list">
                 <li v-for="(item,index) in actions" @click="actionClick(item, index)" v-html="item.template || item.value"></li>
             </ul>
-            <div class="action-cancel" @click="cancel">
+            <div class="action-cancel" @click="hide">
                 取消
             </div>
         </div>
@@ -90,12 +90,14 @@
 
         methods: {
             actionClick(item, index) {
-                this.actionEvent(item, index)
+                this.actionEvent(item, index, this.hide)
             },
 
-            cancel() {
+            hide() {
                 this.$destroy()
-                $backDesk.hide()
+                setTimeout(() => {
+                    $backDesk.hide()
+                }, 100)
             }
         }
     }
