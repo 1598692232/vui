@@ -27,13 +27,14 @@
                     ],
                     [
                         {label: 'ranger', url: '#/ranger'},
-                        {label: 'scroll', url: '#/scroll'},
+                        {label: 'radioOrCheckbox', url: '#/radioandcheckbox'},
+
                         {label: 'dropdown', url: '#/dropdown'}
                     ],
                     [
-                        {label: 'diabox', url: '#/diabox'},
-                        {label: 'radioOrCheckbox', url: '#/radioandcheckbox'},
-                        {label: '', url: 'javascript:;'}
+                        {label: 'diabox', url: '#/diabox'}
+//                        {label: '', url: 'javascript:;'}
+//                        {label: 'scroll', url: '#/scroll'},
                     ]
                 ]
             }
