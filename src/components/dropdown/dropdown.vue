@@ -89,11 +89,9 @@
                     this.$dropDown.style.left = 'auto'
                 }
 
-                alert(this.pos.y)
-                alert(this.$dropDown.offsetHeight)
                 alert(this.pos.y + this.$dropDown.offsetHeight)
                 alert(this.pos.y + this.$dropDown.offsetHeight > this.clientHeight)
-                if (this.pos.y + this.$dropDown.offsetHeight > this.clientHeight) {
+                if (this.pos.y + this.$dropDown.offsetHeight + 60 > this.clientHeight) {
                     this.$dropDown.style.top = parseInt(this.pos.y - this.$dropDown.offsetHeight - this.$bindEl.offsetHeight - 10) + 'px'
                 }
                 alert(this.$dropDown.style.top)
