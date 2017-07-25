@@ -4,7 +4,7 @@
         <div class="scroll-demo">
             <head-top title="Scroller" left-url="#/"></head-top>
             <div style="margin-top:0.64rem;position: relative;height:6rem;">
-                <scroll :on-refresh="refresh" :on-load="loadData">
+                <scroll :on-refresh="refresh"  :on-load="loadData">
                     <div slot="refresh">上拉刷新</div>
                     <ul class="list">
                         <li v-for="c in list">{{c}}</li>

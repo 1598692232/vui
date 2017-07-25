@@ -11,12 +11,12 @@
          @touchend="onRefresh?onTouchEnd($event):undefined"
          @scroll="onLoad?onScroll($event):undefined"
     >
-        <div class= "vui-scroll-inner"
-             :style="{
-                    transform: 'translate3d(0, ' + top + 'px, 0)',
-                    webkitTransform: 'translate3d(0, ' + top + 'px, 0)'
-                  }"
-        >
+        <div class= "vui-scroll-inner">
+             <!--:style="{-->
+                    <!--transform: 'translate3d(0, ' + top + 'px, 0)',-->
+                    <!--webkitTransform: 'translate3d(0, ' + top + 'px, 0)'-->
+                  <!--}"-->
+
             <div class="vui-scroll-refresh"
                  :style="{
                  display:onRefresh?'':'none',
