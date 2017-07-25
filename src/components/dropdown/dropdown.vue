@@ -52,8 +52,8 @@
             }
         },
         mounted() {
-            this.clientWidth = screen.width
-            this.clientHeight = screen.height
+            this.clientWidth = window.innerWidth
+            this.clientHeight = window.innerHeight
         },
         methods: {
             show(pos, options, bindEl) {
@@ -88,13 +88,13 @@
                     this.$dropDown.style.right = parseInt(this.clientWidth - this.$bindEl.getBoundingClientRect().right) + 'px'
                     this.$dropDown.style.left = 'auto'
                 }
-                alert(window.innerHeight)
-                alert(this.pos.y + this.$dropDown.offsetHeight)
-                alert(this.pos.y + this.$dropDown.offsetHeight > this.clientHeight)
-                if (this.pos.y + this.$dropDown.offsetHeight + 60 > this.clientHeight) {
+//                alert(window.innerHeight)
+//                alert(this.pos.y + this.$dropDown.offsetHeight)
+//                alert(this.pos.y + this.$dropDown.offsetHeight > this.clientHeight)
+                if (this.pos.y + this.$dropDown.offsetHeight > this.clientHeight) {
                     this.$dropDown.style.top = parseInt(this.pos.y - this.$dropDown.offsetHeight - this.$bindEl.offsetHeight - 10) + 'px'
                 }
-                alert(this.$dropDown.style.top)
+//                alert(this.$dropDown.style.top)
             },
 
         /*  dropdown click */
