@@ -117,6 +117,7 @@
               this.touchStartX = e.touches[0].pageX
               this.touching = true
               this.$emit('ontouchstart', this.activeIndex, this.moveX, this.newData)
+              e.preventDefault()
           },
 
       /* touchMove事件 */
@@ -130,10 +131,11 @@
                   this.touchingMovePrev()
               }
               this.$emit('ontouchmove', this.activeIndex, this.moveX, this.newData)
+              e.preventDefault()
           },
 
       /* touchend事件 */
-          onTouchEnd () {
+          onTouchEnd (e) {
               if (this.transition) return
               if (Math.abs(this.moveX) > this.maxWidth) {
           /* 异常处理：滑动距离超过maxWidth */
@@ -151,6 +153,7 @@
                   }
               }
               this.$emit('ontouchend', this.activeIndex, this.moveX, this.newData)
+              e.preventDefault()
           },
 
           touchEndSpecialNext () {
