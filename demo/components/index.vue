@@ -28,7 +28,6 @@
                     [
                         {label: 'ranger', url: '#/ranger'},
                         {label: 'radioOrCheckbox', url: '#/radioandcheckbox'},
-
                         {label: 'dropdown', url: '#/dropdown'}
                     ],
                     [
