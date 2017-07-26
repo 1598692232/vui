@@ -2,7 +2,7 @@
   <div class="demo">
     <head-top title="Swiper" left-url="#/"></head-top>
     <div style="margin-top:0.64rem">
-      <Swiper :data="data" :auto="false" :delay="1000" :slider-shift="100" :speed="0.5" ref="swiper"
+      <Swiper :data="data" :auto="false" :delay="1000" :slider-shift="40" :speed="0.5" ref="swiper"
               @ontouchstart="touchstart" @ontouchmove="touchmove" @ontouchend="touchend" @renderend="renderend" @renderstart="renderstart">
         <template scope="props">
           <span>{{ props.item.value }}</span>
