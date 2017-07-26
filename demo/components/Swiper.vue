@@ -34,11 +34,11 @@ export default{
     },
 
     mounted() {
-        let _$ = this
-        setTimeout(() => {
-            console.log(1231231)
-            _$.$refs.swiper.setActive(6)
-        }, 1000)
+//        let _$ = this
+//        setTimeout(() => {
+//            console.log(1231231)
+//            _$.$refs.swiper.setActive(6)
+//        }, 1000)
     },
 
     methods: {
