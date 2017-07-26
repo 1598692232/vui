@@ -66,6 +66,8 @@
       },
 
       mounted() {
+          document.activeElement.blur()
+
           let _$ = this
           _$.util = new Util()
           channel.$on('selectok', (val) => {
