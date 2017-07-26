@@ -100,12 +100,12 @@ module.exports = {
 if (process.env.NODE_ENV === 'production') {
   module.exports.devtool = '#source-map' //生成一个SourceMap文件.
   // http://vue-loader.vuejs.org/en/workflow/production.html
-  module.exports.entry = './demo/main.js'
+  module.exports.entry = './src/index.js'
   module.exports.watch = true
   module.exports.output = {
 	  path: path.resolve(__dirname, './dist'),
 	  publicPath: '/dist/',
-	  filename: 'build.js'
+	  filename: 'dvui.js'
   },
   module.exports.plugins = (module.exports.plugins || []).concat([
     new webpack.DefinePlugin({
@@ -122,6 +122,6 @@ if (process.env.NODE_ENV === 'production') {
     new webpack.LoaderOptionsPlugin({
       minimize: true
     }),
-	  new ExtractTextPlugin("style.css")
+	  new ExtractTextPlugin("dvui.css")
   ])
 }
